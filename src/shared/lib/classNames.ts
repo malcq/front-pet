@@ -3,13 +3,6 @@ export function classNames(
   mods: Mods = {},
   additional: string[] = []
 ): string {
-  console.log(additional, 'additional', [
-    cls,
-    ...additional,
-    Object.entries(mods)
-      .filter(([className, value]) => Boolean(value))
-      .map(([className]) => className),
-  ]);
   return [
     cls,
     ...additional,
