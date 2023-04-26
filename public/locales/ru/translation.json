@@ -1,5 +1,12 @@
 {
   "test": "тестовый пример",
-  "translation":  "перевод",
-  "language": "Русский"
+  "translation": "перевод",
+  "language": "Русский",
+  "page-not-found": "Страница не найдена",
+  "toggle": "переключить",
+  "navbar": {
+    "mainPage": "Главная",
+    "about": "О сайте"
+  },
+  "loading": "Загрузка..."
 }
