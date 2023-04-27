@@ -1,0 +1,12 @@
+{
+  "test": "test example",
+  "translation": "translation",
+  "language": "English",
+  "page-not-found": "Page not found",
+  "toggle": "Toggle",
+  "navbar": {
+    "mainPage": "Main page",
+    "about": "About page"
+  },
+  "loading": "Loading..."
+}
