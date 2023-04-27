@@ -8,5 +8,8 @@
     "mainPage": "Main page",
     "about": "About page"
   },
-  "loading": "Loading..."
+  "loading": "Loading...",
+  "PageError": "Something went wrong",
+  "reloadPage": "reload page",
+  "throw error": "throw err"
 }
