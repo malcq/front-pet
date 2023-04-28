@@ -17,11 +17,15 @@ export const Sidebar = ({ className }: SidebarProps) => {
   };
   return (
     <div
+      // eslint-disable-next-line react/no-unknown-property
+      date-testid="sidebar"
       className={classNames(cls.Sidebar, { [cls.collapsed]: isCollapsed }, [
         className,
       ])}
     >
-      <button type="button" onClick={onToggle}>
+
+      {/* eslint-disable-next-line react/no-unknown-property */ }
+      <button date-testid="sidebar-toggle" type="button" onClick={onToggle}>
         {t('toggle')}
       </button>
       <div className={cls.switchers}>
