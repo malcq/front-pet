@@ -6,6 +6,7 @@ declare module '*.scss' {
   export = classNames;
 }
 
+declare module 'react/jsx-runtime';
 declare module '*.png';
 declare module '*.jpg';
 declare module '*.jpeg';
