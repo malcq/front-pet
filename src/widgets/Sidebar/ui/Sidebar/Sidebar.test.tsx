@@ -1,17 +1,17 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 import {
-  renderWithTranslation,
-} from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
+  componentRender,
+} from 'shared/lib/tests/componentRender/componentRender';
 import { Sidebar } from 'widgets/Sidebar/ui/Sidebar/Sidebar';
 
 describe('Sidebar', () => {
   test('test render', () => {
-    renderWithTranslation(<Sidebar />);
+    componentRender(<Sidebar />);
     waitFor(() => expect(screen.queryByTestId('sidebar')).toBeInTheDocument());
   });
 
   test('test toogle', async () => {
-    renderWithTranslation(<Sidebar />);
+    componentRender(<Sidebar />);
     waitFor(() => {
       const toggleBtn = screen.queryByTestId('sidebar-toggle');
       fireEvent.click(toggleBtn);
