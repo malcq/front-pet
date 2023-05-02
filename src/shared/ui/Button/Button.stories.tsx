@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
@@ -15,43 +16,45 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-};
+} as Meta;
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof meta>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 export const Primary: Story = {
   // More on args: https://storybook.js.org/docs/react/writing-stories/args
-  args: {
-    children: 'Text',
-  },
-  /*  decorators: [ThemeDecorator(Theme.LIGHT)], */
+  render: (args) => (
+    <Button {...args}>
+      Primary!!
+    </Button>
+  ),
 };
 
 export const Clear: Story = {
   // More on args: https://storybook.js.org/docs/react/writing-stories/args
-  args: {
-    children: 'Text',
-    variant: VariantButton.CLEAR,
-  },
-  /*  decorators: [ThemeDecorator(Theme.LIGHT)], */
+  render: (args) => (
+    <Button {...args} variant={VariantButton.CLEAR}>
+      Primary!!
+    </Button>
+  ),
 };
 
 export const Outline: Story = {
   // More on args: https://storybook.js.org/docs/react/writing-stories/args
-  args: {
-    children: 'Text',
-    variant: VariantButton.OUTLINE,
-  },
-  /*  decorators: [ThemeDecorator(Theme.LIGHT)], */
+  render: (args) => (
+    <Button {...args} variant={VariantButton.OUTLINE}>
+      Primary!!
+    </Button>
+  ),
 };
 
 export const OutlineDark: Story = {
   // More on args: https://storybook.js.org/docs/react/writing-stories/args
-  args: {
-    children: 'Text',
-    variant: VariantButton.OUTLINE,
-  },
+  render: (args) => (
+    <Button {...args} variant={VariantButton.OUTLINE}>
+      Primary!!
+    </Button>
+  ),
   decorators: [ThemeDecorator(Theme.DARK)],
 };

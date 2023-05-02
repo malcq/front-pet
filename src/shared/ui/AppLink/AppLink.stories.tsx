@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
@@ -7,57 +8,59 @@ import { AppLink, AppLinkTheme } from './AppLink';
 const meta: Meta<typeof AppLink> = {
   title: 'shared/AppLink',
   component: AppLink,
-  args: {
-    to: '/',
-  },
 };
 
 export default meta;
 type Story = StoryObj<typeof AppLink>;
 
 export const Primary: Story = {
-
-  args: {
-    children: 'Primary',
-    theme: AppLinkTheme.SECONDARY,
-  },
+  render: (args) => (
+    <AppLink to="/" {...args} theme={AppLinkTheme.PRIMARY}>
+      Primary
+    </AppLink>
+  ),
 };
 
 export const Secondary: Story = {
 
-  args: {
-    children: 'Secondary',
-    theme: AppLinkTheme.SECONDARY,
-  },
+  render: (args) => (
+    <AppLink to="/" {...args} theme={AppLinkTheme.SECONDARY}>
+      Secondary
+    </AppLink>
+  ),
 };
 
 export const Red: Story = {
-  args: {
-    children: 'Red',
-    theme: AppLinkTheme.RED,
-  },
+  render: (args) => (
+    <AppLink to="/" {...args} theme={AppLinkTheme.RED}>
+      Red
+    </AppLink>
+  ),
 };
 
 export const PrimaryOnDark: Story = {
-  args: {
-    children: 'PrimaryOnDark',
-    theme: AppLinkTheme.PRIMARY,
-  },
+  render: (args) => (
+    <AppLink to="/" {...args} theme={AppLinkTheme.PRIMARY}>
+      Primary
+    </AppLink>
+  ),
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const SecondaryOnDark: Story = {
-  args: {
-    children: 'SecondaryOnDark',
-    theme: AppLinkTheme.SECONDARY,
-  },
+  render: (args) => (
+    <AppLink to="/" {...args} theme={AppLinkTheme.SECONDARY}>
+      Primary
+    </AppLink>
+  ),
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const RedOnDark: Story = {
-  args: {
-    children: 'RedOnDark',
-    theme: AppLinkTheme.RED,
-  },
+  render: (args) => (
+    <AppLink to="/" {...args} theme={AppLinkTheme.RED}>
+      Primary
+    </AppLink>
+  ),
   decorators: [ThemeDecorator(Theme.DARK)],
 };
