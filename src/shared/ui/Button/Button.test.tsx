@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Button, VariantButton } from './Button';
+import { Button, ButtonVariant } from './Button';
 
 describe('Button', () => {
   test('test render', () => {
@@ -10,7 +10,7 @@ describe('Button', () => {
 
   test('with variant clear', () => {
     // eslint-disable-next-line i18next/no-literal-string
-    render(<Button variant={VariantButton.CLEAR}>test</Button>);
+    render(<Button variant={ButtonVariant.CLEAR}>test</Button>);
     expect(screen.getByText('test')).toHaveClass('clear');
     screen.debug();
   });

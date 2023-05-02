@@ -2,6 +2,7 @@
   "test": "тестовый пример",
   "translation": "перевод",
   "language": "Русский",
+  "shortLanguage": "Ру",
   "page-not-found": "Страница не найдена",
   "toggle": "переключить",
   "navbar": {
