@@ -8,7 +8,7 @@ const config = {
     '@storybook/addon-interactions',
   ],
   features: {
-    storyStoreV7: false,
+    storyStoreV7: true,
   },
   staticDirs: ['../../public'], // set locales IMPORTANT
   framework: {
