@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: build production project
         run: npm run build:prod
         if: always()
@@ -32,6 +32,6 @@ jobs:
         if: always()
       - name: build storybook
         run: npm run storybook:build
-#        if: always()
-#      - name: screenshot testing
-#       run: npm run test:ui:ci - fix loki and storybook(module 3)
+        if: always()
+      - name: screenshot testing
+        run: npm run test:ui:ci
