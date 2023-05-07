@@ -22,99 +22,91 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-export const Primary: Story = {
-  // More on args: https://storybook.js.org/docs/react/writing-stories/args
-  render: () => (
-    <Button>
-      Primary
-    </Button>
-  ),
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+export const Primary: Story = {};
+Primary.args = {
+  children: 'primary',
 };
 
-export const Clear: Story = {
-  render: () => (
-    <Button variant={ButtonVariant.CLEAR}>
-      clear
-    </Button>
-  ),
+export const Clear: Story = {};
+Clear.args = {
+  variant: ButtonVariant.CLEAR,
+  children: 'clear',
 };
 
-export const Outline: Story = {
-  render: () => (
-    <Button variant={ButtonVariant.OUTLINE}>
-      outline
-    </Button>
-  ),
+export const ClearInverted: Story = {};
+ClearInverted.args = {
+  variant: ButtonVariant.CLEAR_INVERTED,
+  children: 'clear intverted',
+};
+
+export const Outline: Story = {};
+Outline.args = {
+  variant: ButtonVariant.OUTLINE,
+  children: 'Outline',
 };
 
 export const OutlineDark: Story = {
-  render: () => (
-    <Button variant={ButtonVariant.OUTLINE}>
-      Outline on dark
-    </Button>
-  ),
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 
-export const BackgroundTheme: Story = {
-  render: () => (
-    <Button variant={ButtonVariant.BACKGROUND}>
-      BackgroundTheme
-    </Button>
-  ),
+OutlineDark.args = {
+  variant: ButtonVariant.OUTLINE,
+  children: 'OutlineDark',
 };
 
-export const BackgroundInverted: Story = {
-  render: () => (
-    <Button variant={ButtonVariant.BACKGROUND_INVERTED}>
-      background inverted
-    </Button>
-  ),
+export const BackgroundTheme: Story = {};
+BackgroundTheme.args = {
+  variant: ButtonVariant.BACKGROUND,
+  children: 'BackgroundTheme',
 };
 
-export const square: Story = {
-  render: () => (
-    <Button variant={ButtonVariant.BACKGROUND_INVERTED} square>
-      &gt;
-    </Button>
-  ),
+export const BackgroundInverted: Story = {};
+BackgroundInverted.args = {
+  variant: ButtonVariant.BACKGROUND_INVERTED,
+  children: 'Background inverted',
 };
 
-export const squareSizeL: Story = {
-  render: () => (
-    <Button variant={ButtonVariant.BACKGROUND_INVERTED} square size={ButtonSize.L}>
-      &gt;
-    </Button>
-  ),
+export const Square: Story = {};
+Square.args = {
+  variant: ButtonVariant.BACKGROUND_INVERTED,
+  square: true,
+  children: '>',
 };
 
-export const squareSizeXL: Story = {
-  render: () => (
-    <Button variant={ButtonVariant.BACKGROUND_INVERTED} square size={ButtonSize.L}>
-      &gt;
-    </Button>
-  ),
-};
-export const outlineSize: Story = {
-  render: () => (
-    <Button variant={ButtonVariant.OUTLINE} size={ButtonSize.M}>
-      text
-    </Button>
-  ),
+export const SquareSizeL: Story = {};
+SquareSizeL.args = {
+  variant: ButtonVariant.BACKGROUND_INVERTED,
+  square: true,
+  size: ButtonSize.L,
+  children: '>',
 };
 
-export const outlineSizeL: Story = {
-  render: () => (
-    <Button variant={ButtonVariant.OUTLINE} size={ButtonSize.L}>
-      text
-    </Button>
-  ),
+export const SquareSizeXL: Story = {};
+SquareSizeL.args = {
+  variant: ButtonVariant.BACKGROUND_INVERTED,
+  square: true,
+  size: ButtonSize.XL,
+  children: '>',
 };
 
-export const outlineSizeXL: Story = {
-  render: () => (
-    <Button variant={ButtonVariant.OUTLINE} size={ButtonSize.XL}>
-      text
-    </Button>
-  ),
+export const OutlineSize: Story = {};
+OutlineSize.args = {
+  variant: ButtonVariant.OUTLINE,
+  size: ButtonSize.M,
+  children: 'Text',
+};
+
+export const OutlineSizeL: Story = {};
+OutlineSizeL.args = {
+  variant: ButtonVariant.OUTLINE,
+  size: ButtonSize.L,
+  children: 'Text',
+};
+
+export const OutlineSizeXL: Story = {};
+OutlineSizeXL.args = {
+  variant: ButtonVariant.OUTLINE,
+  size: ButtonSize.XL,
+  children: 'Text',
 };

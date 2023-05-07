@@ -12,5 +12,6 @@
   "PageError": "Something went wrong",
   "reloadPage": "reload page",
   "throw error": "throw err",
-  "shortLanguage": "En"
+  "shortLanguage": "En",
+  "signIn": "sign in"
 }
