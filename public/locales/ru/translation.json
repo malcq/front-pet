@@ -2,11 +2,15 @@
   "test": "тестовый пример",
   "translation": "перевод",
   "language": "Русский",
+  "shortLanguage": "Ру",
   "page-not-found": "Страница не найдена",
   "toggle": "переключить",
   "navbar": {
     "mainPage": "Главная",
     "about": "О сайте"
   },
-  "loading": "Загрузка..."
+  "loading": "Загрузка...",
+  "PageError": "Произошла непредвиденная ошибка",
+  "reloadPage": "перезагрузить страницу",
+  "throw error": "бросить ошибку"
 }
