@@ -13,5 +13,7 @@
   "reloadPage": "reload page",
   "throw error": "throw err",
   "shortLanguage": "En",
-  "signIn": "sign in"
+  "signIn": "sign in",
+  "increment": "increment",
+  "decrement": "decrement"
 }

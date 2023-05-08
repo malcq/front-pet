@@ -1,4 +1,9 @@
 {
   "language": "",
+  "navbar": {
+    "about": "",
+    "mainPage": ""
+  },
+  "page-not-found": "",
   "toggle": ""
 }
