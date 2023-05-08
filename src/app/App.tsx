@@ -9,7 +9,7 @@ const App = () => {
   const { theme } = useTheme();
 
   return (
-    <div className={classNames('app', { hovered: false }, [theme])}>
+    <div className={classNames('app', {}, [])}>
       <Suspense fallback="">
         <Navbar />
 
