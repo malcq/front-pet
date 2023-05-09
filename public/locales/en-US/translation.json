@@ -15,5 +15,7 @@
   "shortLanguage": "En",
   "signIn": "sign in",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "username": "fill username",
+  "password": "fill password"
 }

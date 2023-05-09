@@ -15,5 +15,7 @@
   "throw error": "бросить ошибку",
   "signIn": "Войти",
   "increment": "увеличить",
-  "decrement": "уменьшить"
+  "decrement": "уменьшить",
+  "username": "введите username",
+  "password": "введите password"
 }
