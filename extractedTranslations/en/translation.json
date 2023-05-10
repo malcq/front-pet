@@ -1,9 +1,14 @@
 {
+  "PageError": "",
   "language": "",
   "navbar": {
     "about": "",
     "mainPage": ""
   },
   "page-not-found": "",
-  "toggle": ""
+  "password": "",
+  "reloadPage": "",
+  "signIn": "",
+  "toggle": "",
+  "username": ""
 }
