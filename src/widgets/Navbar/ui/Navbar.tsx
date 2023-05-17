@@ -1,7 +1,9 @@
+/* eslint-disable i18next/no-literal-string */
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLinkTheme, AppLink } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { useTranslation } from 'react-i18next';
+import { useCallback, useState } from 'react';
+import { Button, ButtonVariant } from 'shared/ui/Button/Button';
+import { LoginModal } from 'features/AuthByUsername';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -9,9 +11,27 @@ interface NavbarProps {
 }
 export const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation();
+  const [isAuthModal, setIsAuthModal] = useState(false);
+
+  const onCloseModal = useCallback(() => {
+    setIsAuthModal(false);
+  }, []);
+
+  const onShowModal = useCallback(() => {
+    setIsAuthModal(true);
+  }, []);
+
   return (
-    <div className={classNames(cls.navbar, {}, [className])}>
-      <div className={cls.links} />
+    <div className={classNames(cls.Navbar, {}, [className])}>
+      <Button
+        variant={ButtonVariant.CLEAR_INVERTED}
+        className={cls.links}
+        onClick={onShowModal}
+      >
+        {t('signIn')}
+      </Button>
+
+      <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
     </div>
   );
 };

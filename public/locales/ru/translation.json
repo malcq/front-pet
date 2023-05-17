@@ -12,5 +12,10 @@
   "loading": "Загрузка...",
   "PageError": "Произошла непредвиденная ошибка",
   "reloadPage": "перезагрузить страницу",
-  "throw error": "бросить ошибку"
+  "throw error": "бросить ошибку",
+  "signIn": "Войти",
+  "increment": "увеличить",
+  "decrement": "уменьшить",
+  "username": "введите username",
+  "password": "введите password"
 }

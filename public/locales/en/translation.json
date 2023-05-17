@@ -12,5 +12,10 @@
   "PageError": "Something went wrong",
   "reloadPage": "reload page",
   "throw error": "throw err",
-  "shortLanguage": "En"
+  "shortLanguage": "En",
+  "signIn": "sign in",
+  "increment": "increment",
+  "decrement": "decrement",
+  "username": "fill username",
+  "password": "fill password"
 }

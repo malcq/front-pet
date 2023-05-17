@@ -18,13 +18,17 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: [
+    'react',
+    'react-hooks',
+    '@typescript-eslint',
+    'i18next',
+  ],
   rules: {
     'react/jsx-indent': [2, 2],
     indent: [2, 2],
-    'react/jsx-filename-extension': [2, {
-      extensions: ['.js', '.jsx', '.tsx'],
-    }],
+    'no-tabs': 0,
+    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
     'react/react-in-jsx-scope': 'off',
@@ -38,22 +42,22 @@ module.exports = {
     'no-shadow': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
-    'i18next/no-literal-string': ['error', {
-      markupOnly: true,
-      ignoreAttribute: ['data-testid'],
-    }],
-    'max-len': ['error', {
-      code: 100,
-      ignoreComments: true,
-    }],
+    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'max-len': ['error', { code: 100, ignoreComments: true }],
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'no-param-reassign': 'off',
   },
   globals: {
     __IS_DEV__: true,
   },
   overrides: [{
-    files: ['**/src/**/*.test.{ts,tsx}'],
+    files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
     rules: {
       'i18next/no-literal-string': 'off',
+      'max-len': 'off',
     },
   }],
 };

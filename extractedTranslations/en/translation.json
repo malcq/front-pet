@@ -1,4 +1,16 @@
 {
+  "PageError": "",
+  "decrement": "",
+  "increment": "",
   "language": "",
-  "toggle": ""
+  "navbar": {
+    "about": "",
+    "mainPage": ""
+  },
+  "page-not-found": "",
+  "password": "",
+  "reloadPage": "",
+  "signIn": "",
+  "toggle": "",
+  "username": ""
 }
