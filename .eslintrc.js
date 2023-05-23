@@ -35,7 +35,8 @@ module.exports = {
     // if react 17 rule can be off
     'linebreak-style': 0,
     'import/prefer-default-export': 'off',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
     'react/require-default-props': 'off',
     'react/function-component-definition': 'off',
     'react/jsx-props-no-spreading': 'warn',
@@ -43,7 +44,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true }],
-    'max-len': ['error', { code: 100, ignoreComments: true }],
+    'max-len': ['error', { code: 120, ignoreComments: true }],
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
     'jsx-a11y/click-events-have-key-events': 'off',

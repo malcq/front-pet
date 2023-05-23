@@ -1,5 +1,6 @@
 {
   "PageError": "",
+  "autorizationForm": "",
   "decrement": "",
   "increment": "",
   "language": "",
@@ -11,6 +12,9 @@
   "password": "",
   "reloadPage": "",
   "signIn": "",
+  "signOut": "",
   "toggle": "",
-  "username": ""
+  "username": "",
+  "wrongCredentials": "",
+  "wrongLoginPassword": ""
 }
