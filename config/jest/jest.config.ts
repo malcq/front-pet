@@ -34,7 +34,7 @@ export default {
   coveragePathIgnorePatterns: [
     '\\\\node_modules\\\\',
   ],
-
+  transformIgnorePatterns: ['/node_modules/(?!(axios)/)'],
   // Indicates which provider should be used to instrument code for coverage
   // coverageProvider: "babel",
 

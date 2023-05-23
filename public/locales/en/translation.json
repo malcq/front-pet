@@ -17,5 +17,8 @@
   "increment": "increment",
   "decrement": "decrement",
   "username": "fill username",
-  "password": "fill password"
+  "password": "fill password",
+  "autorizationForm": "authorization form",
+  "wrongLoginPassword": "u fill wrong login or password",
+  "signOut": "sign out"
 }
