@@ -5,8 +5,9 @@
   "page-not-found": "Page not found",
   "toggle": "Toggle",
   "navbar": {
-    "mainPage": "Main page",
-    "about": "About page"
+    "main": "Main page",
+    "about": "About page",
+		"profile": "Profile page"
   },
   "loading": "Loading...",
   "PageError": "Something went wrong",

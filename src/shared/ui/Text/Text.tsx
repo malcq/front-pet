@@ -1,4 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
+import { memo } from 'react';
 import cls from './Text.module.scss';
 
 export enum TextVariant {
@@ -13,13 +14,13 @@ interface TextProps {
 	textVariant?: TextVariant;
 }
 
-export const Text = ({
-  className,
-  title,
-  text,
-  textVariant = TextVariant.PRIMARY,
-}: TextProps) => {
-  console.log(textVariant);
+export const Text = memo((props: TextProps) => {
+  const {
+    className,
+    title,
+    text,
+    textVariant = TextVariant.PRIMARY,
+  } = props;
 
   return (
     <div className={classNames(cls.Text, {}, [className, cls[textVariant]])}>
@@ -27,4 +28,4 @@ export const Text = ({
       {text && <p className={cls.text}>{text}</p>}
     </div>
   );
-};
+});
