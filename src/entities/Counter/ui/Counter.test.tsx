@@ -6,26 +6,30 @@ import { Counter } from './Counter';
 
 describe('Counter', () => {
   test('test render', async () => {
-    componentRender(<Counter />, {
-      initialState: { counter: { value: 10 } },
+    waitFor(() => {
+      componentRender(<Counter />, {
+        initialState: { counter: { value: 10 } },
+      });
+      expect(screen.queryByTestId('value-title')).toHaveTextContent('10');
     });
-    await waitFor(() => expect(screen.queryByTestId('value-title')).toHaveTextContent('10'));
   });
 
   test('increment', async () => {
-    componentRender(<Counter />, {
-      initialState: { counter: { value: 10 } },
+    waitFor(() => {
+      componentRender(<Counter />, {
+        initialState: { counter: { value: 10 } },
+      });
+      fireEvent.click(screen.getByTestId('increment-btn'));
+      expect(screen.queryByTestId('value-title')).toHaveTextContent('11');
     });
-    fireEvent.click(screen.getByTestId('increment-btn'));
-    await waitFor(() => expect(screen.queryByTestId('value-title')).toHaveTextContent('11'));
   });
 
   test('decrement', async () => {
-    componentRender(<Counter />, {
-      initialState: { counter: { value: 10 } },
-    });
+    waitFor(() => {
+      componentRender(<Counter />, {
+        initialState: { counter: { value: 10 } },
+      });
 
-    await waitFor(() => {
       fireEvent.click(screen.getByTestId('decrement-btn'));
       expect(screen.queryByTestId('value-title')).toHaveTextContent('9');
     });

@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { waitFor } from '@testing-library/react';
 import { getLoginError } from './getLoginError';

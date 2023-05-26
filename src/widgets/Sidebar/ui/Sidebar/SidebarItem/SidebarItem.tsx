@@ -15,12 +15,12 @@ export const SidebarItem = ({ item, isCollapsed }: SidebarItemProps) => {
   return (
     <AppLink
       theme={AppLinkTheme.SECONDARY}
-      to={item.path}
+      to={item?.path || ''}
       className={classNames(cls.item, { [cls.collapsed]: isCollapsed })}
     >
-      <item.Icon className={cls.icon} />
+      {item && <item.Icon className={cls.icon} />}
       <span className={cls.link}>
-        {t(item.text)}
+        {t(item?.text || '')}
       </span>
     </AppLink>
   );

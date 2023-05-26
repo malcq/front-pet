@@ -15,7 +15,7 @@ type Story = StoryObj<typeof AppLink>;
 
 export const Primary: Story = {
   render: (args) => (
-    <AppLink to="/" {...args} theme={AppLinkTheme.PRIMARY}>
+    <AppLink {...args} theme={AppLinkTheme.PRIMARY}>
       Primary
     </AppLink>
   ),
@@ -24,7 +24,7 @@ export const Primary: Story = {
 export const Secondary: Story = {
 
   render: (args) => (
-    <AppLink to="/" {...args} theme={AppLinkTheme.SECONDARY}>
+    <AppLink {...args} theme={AppLinkTheme.SECONDARY}>
       Secondary
     </AppLink>
   ),
@@ -32,7 +32,7 @@ export const Secondary: Story = {
 
 export const Red: Story = {
   render: (args) => (
-    <AppLink to="/" {...args} theme={AppLinkTheme.RED}>
+    <AppLink {...args} theme={AppLinkTheme.RED}>
       Red
     </AppLink>
   ),
@@ -40,7 +40,7 @@ export const Red: Story = {
 
 export const PrimaryOnDark: Story = {
   render: (args) => (
-    <AppLink to="/" {...args} theme={AppLinkTheme.PRIMARY}>
+    <AppLink {...args} theme={AppLinkTheme.PRIMARY}>
       Primary
     </AppLink>
   ),
@@ -49,7 +49,7 @@ export const PrimaryOnDark: Story = {
 
 export const SecondaryOnDark: Story = {
   render: (args) => (
-    <AppLink to="/" {...args} theme={AppLinkTheme.SECONDARY}>
+    <AppLink {...args} theme={AppLinkTheme.SECONDARY}>
       Primary
     </AppLink>
   ),
@@ -58,7 +58,7 @@ export const SecondaryOnDark: Story = {
 
 export const RedOnDark: Story = {
   render: (args) => (
-    <AppLink to="/" {...args} theme={AppLinkTheme.RED}>
+    <AppLink {...args} theme={AppLinkTheme.RED}>
       Primary
     </AppLink>
   ),
