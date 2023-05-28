@@ -8,7 +8,7 @@
   "navbar": {
     "main": "Главная",
     "about": "О сайте",
-		"profile": "Профиль"
+    "profile": "Профиль"
   },
   "loading": "Загрузка...",
   "PageError": "Произошла непредвиденная ошибка",
@@ -21,5 +21,9 @@
   "password": "введите password",
   "autorizationForm": "форма авторизации",
   "wrongLoginPassword": "вы ввели неверный логин или пароль",
-  "signOut": "выйти"
+  "signOut": "выйти",
+  "errorProfile": "произошла ошибка при загрузке профиля",
+  "tryReloadPage": "Попробуйте обновить страницу",
+  "cancel": "отменить",
+  "save": "сохранить"
 }

@@ -1,7 +1,23 @@
 {
+  "age": "",
+  "avatar": "",
+  "cancel": "",
+  "city": "",
+  "currency": "",
   "edit": "",
+  "errorProfile": "",
   "first": "",
   "lastname": "",
+  "profile": {
+    "errorProfile": "",
+    "profilePage": ""
+  },
   "profileCard": "",
-  "profilePage": ""
+  "profilePage": "",
+  "profileerrorProfile": "",
+  "reloadPage": "",
+  "translation": {
+    "cancel": ""
+  },
+  "username": ""
 }

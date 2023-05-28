@@ -2,5 +2,10 @@
   "profilePage": "Profile card",
   "edit": "edit profile",
 	"first": "Your firstname",
-	"lastname": "Your lastname"
+	"lastname": "Your lastname",
+	"age": "age",
+  "city": "city",
+  "avatar": "url on avatar",
+  "username": "username",
+	"currency": "currency"
 }

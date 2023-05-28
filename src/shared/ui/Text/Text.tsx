@@ -7,11 +7,17 @@ export enum TextVariant {
 	ERROR = 'error'
 }
 
+export enum TextAlign {
+	RIGHT = 'right',
+	CENTER = 'center',
+	LEFT = 'left',
+}
 interface TextProps {
 	className?: string;
 	title?: string;
 	text?: string;
 	textVariant?: TextVariant;
+	align?: TextAlign;
 }
 
 export const Text = memo((props: TextProps) => {
@@ -20,10 +26,11 @@ export const Text = memo((props: TextProps) => {
     title,
     text,
     textVariant = TextVariant.PRIMARY,
+    align = TextAlign.LEFT,
   } = props;
 
   return (
-    <div className={classNames(cls.Text, {}, [className, cls[textVariant]])}>
+    <div className={classNames(cls.Text, {}, [className, cls[textVariant], cls[align]])}>
       {title && <p className={cls.title}>{title}</p>}
       {text && <p className={cls.text}>{text}</p>}
     </div>

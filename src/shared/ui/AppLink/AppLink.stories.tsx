@@ -13,54 +13,49 @@ const meta: Meta<typeof AppLink> = {
 export default meta;
 type Story = StoryObj<typeof AppLink>;
 
-export const Primary: Story = {
-  render: (args) => (
-    <AppLink {...args} theme={AppLinkTheme.PRIMARY}>
-      Primary
-    </AppLink>
-  ),
+export const Primary: Story = {};
+
+Primary.args = {
+  children: 'Primary',
 };
 
-export const Secondary: Story = {
+export const Secondary: Story = {};
 
-  render: (args) => (
-    <AppLink {...args} theme={AppLinkTheme.SECONDARY}>
-      Secondary
-    </AppLink>
-  ),
+Secondary.args = {
+  children: 'Secondary',
+  theme: AppLinkTheme.SECONDARY,
 };
 
-export const Red: Story = {
-  render: (args) => (
-    <AppLink {...args} theme={AppLinkTheme.RED}>
-      Red
-    </AppLink>
-  ),
+export const Red: Story = {};
+
+Red.args = {
+  children: 'Red',
+  theme: AppLinkTheme.RED,
 };
 
 export const PrimaryOnDark: Story = {
-  render: (args) => (
-    <AppLink {...args} theme={AppLinkTheme.PRIMARY}>
-      Primary
-    </AppLink>
-  ),
   decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+PrimaryOnDark.args = {
+  children: 'Red',
+  theme: AppLinkTheme.PRIMARY,
 };
 
 export const SecondaryOnDark: Story = {
-  render: (args) => (
-    <AppLink {...args} theme={AppLinkTheme.SECONDARY}>
-      Primary
-    </AppLink>
-  ),
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 
+PrimaryOnDark.args = {
+  children: 'Secondary',
+  theme: AppLinkTheme.SECONDARY,
+};
+
 export const RedOnDark: Story = {
-  render: (args) => (
-    <AppLink {...args} theme={AppLinkTheme.RED}>
-      Primary
-    </AppLink>
-  ),
   decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+RedOnDark.args = {
+  children: 'RedOnDark',
+  theme: AppLinkTheme.RED,
 };

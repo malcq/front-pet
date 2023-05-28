@@ -14,7 +14,7 @@ interface SidebarProps {
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const { t } = useTranslation();
+
   const onToggle = () => {
     setIsCollapsed((prev) => !prev);
   };
