@@ -2,7 +2,14 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback, useEffect } from 'react';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
-  ProfileCard, fetchProfileData, getProfileForm, getProfileReadonly, profileActions, profileReducer,
+  ProfileCard,
+  ValidateProfileError,
+  fetchProfileData,
+  getProfileForm,
+  getProfileReadonly,
+  getProfileValidateErrors,
+  profileActions,
+  profileReducer,
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
@@ -10,6 +17,8 @@ import { getProfileIsLoading } from 'entities/Profile/model/selectors/getProfile
 import { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Text, TextVariant } from 'shared/ui/Text/Text';
+import { useTranslation } from 'react-i18next';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const defaultReducers: ReducersList = {
@@ -21,14 +30,27 @@ interface ProfilePageProps {
 }
 
 const ProfilePage = memo(({ className }: ProfilePageProps) => {
+  const { t } = useTranslation('profile');
   const dispatch = useAppDispatch();
   const form = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
+  const validateErrors = useSelector(getProfileValidateErrors);
+
+  const validateErrorsTranslates = {
+    [ValidateProfileError.SERVER_ERROR]: t('profile:validateProfileError.serverError'),
+    [ValidateProfileError.INCORRECT_COUNTRY]: t('profile:validateProfileError.country'),
+    [ValidateProfileError.NO_DATA]: t('profile:validateProfileError.noData'),
+    [ValidateProfileError.INCORRECT_USER_DATA]: t('profile:validateProfileError:userData'),
+    [ValidateProfileError.INCORRECT_AGE]: t('profile:validateProfileError:age'),
+
+  };
 
   useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   const onChangeFirstname = useCallback((value: string) => {
@@ -70,6 +92,9 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
     <DynamicModuleLoader reducers={defaultReducers} removeAfterUnmount>
       <div className={classNames('', {}, [className])}>
         <ProfilePageHeader />
+        {validateErrors?.length && validateErrors.map((err) => (
+          <Text key={err} textVariant={TextVariant.ERROR} text={validateErrorsTranslates[err]} />
+        ))}
         <ProfileCard
           data={form}
           isLoading={isLoading}
