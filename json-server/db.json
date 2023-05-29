@@ -1,20 +1,53 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server 1", "author": "typicode" },
-		{ "id": 2, "title": "json-server 2", "author": "typicode" },
-		{ "id": 3, "title": "json-server 3", "author": "typicode" },
-		{ "id": 4, "title": "json-server 4", "author": "typicode" },
-		{ "id": 5, "title": "json-server 5", "author": "typicode" }
+    {
+      "id": "1",
+      "title": "json-server 1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "json-server 2",
+      "userId": "2"
+    },
+    {
+      "id": "3",
+      "title": "json-server 3",
+      "userId": "3"
+    },
+    {
+      "id": "4",
+      "title": "json-server 4",
+      "userId": "4"
+    },
+    {
+      "id": "5",
+      "title": "json-server 5",
+      "userId": "5"
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
   ],
-	"users": [
-		{
-			"id": 1,
-			"username": "admin",
-			"password": "123"
-		}
-	],
-  "profile": { "name": "typicode" }
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "first": "Тимур",
+    "lastname": "Ульби",
+    "age": 22,
+    "currency": "USD",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://png.pngtree.com/png-clipart/20200701/original/pngtree-hacker-community-vector-esports-png-image_5388231.jpg"
+  }
 }

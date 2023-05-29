@@ -1,0 +1,31 @@
+{
+  "": "",
+  "age": "",
+  "avatar": "",
+  "cancel": "",
+  "city": "",
+  "currency": "",
+  "edit": "",
+  "errorProfile": "",
+  "first": "",
+  "lastname": "",
+  "profile": {
+    "errorProfile": "",
+    "profilePage": ""
+  },
+  "profileCard": "",
+  "profilePage": "",
+  "profileerrorProfile": "",
+  "reloadPage": "",
+  "translation": {
+    "cancel": ""
+  },
+  "username": "",
+  "validateProfileError": {
+    "country": "",
+    "noData": "",
+    "serverError": ""
+  },
+  "validateProfileError:age": "",
+  "validateProfileError:userData": ""
+}

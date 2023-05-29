@@ -1,0 +1,18 @@
+{
+  "age": "age",
+  "avatar": "avatar",
+  "city": "city",
+  "currency": "currency",
+  "edit": "edit",
+  "first": "first",
+  "lastname": "lastname",
+  "profilePage": "profilePage",
+  "username": "username",
+  "validateProfileError": {
+    "country": "country",
+    "noData": "noData",
+    "serverError": "serverError"
+  },
+  "validateProfileError:age": "validateProfileError:age",
+  "validateProfileError:userData": "validateProfileError:userData"
+}

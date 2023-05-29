@@ -47,12 +47,17 @@ module.exports = {
     'max-len': ['error', { code: 120, ignoreComments: true }],
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+    'react/jsx-no-useless-fragment': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'no-param-reassign': 'off',
+    'no-undef': 'off',
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
+    __PROJECT__: true,
+
   },
   overrides: [{
     files: ['**/src/**/*.{test,stories}.{ts,tsx}'],

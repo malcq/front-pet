@@ -1,19 +1,36 @@
 {
   "PageError": "",
+  "aboutPage": "aboutPage",
+  "age": "",
   "autorizationForm": "",
+  "avatar": "",
+  "cancel": "",
+  "city": "",
   "decrement": "",
+  "edit": "",
+  "errorProfile": "",
+  "first": "",
   "increment": "",
   "language": "",
+  "lastname": "",
+  "mainPage": "mainPage",
   "navbar": {
     "about": "",
     "mainPage": ""
   },
   "page-not-found": "",
   "password": "",
+  "profile": {
+    "errorProfile": "",
+    "profilePage": ""
+  },
+  "profilePage": "",
   "reloadPage": "",
+  "save": "",
   "signIn": "",
   "signOut": "",
   "toggle": "",
+  "tryReloadPage": "",
   "username": "",
   "wrongCredentials": "",
   "wrongLoginPassword": ""

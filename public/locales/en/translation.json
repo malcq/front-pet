@@ -5,8 +5,9 @@
   "page-not-found": "Page not found",
   "toggle": "Toggle",
   "navbar": {
-    "mainPage": "Main page",
-    "about": "About page"
+    "main": "Main",
+    "about": "About",
+    "profile": "Profile"
   },
   "loading": "Loading...",
   "PageError": "Something went wrong",
@@ -20,5 +21,9 @@
   "password": "fill password",
   "autorizationForm": "authorization form",
   "wrongLoginPassword": "u fill wrong login or password",
-  "signOut": "sign out"
+  "signOut": "sign out",
+  "errorProfile": "an error occurred while loading the profile",
+  "tryReloadPage": "Please, try reload page",
+  "cancel": "cancel",
+  "save": "save"
 }

@@ -1,0 +1,20 @@
+{
+  "PageError": "PageError",
+  "aboutPage": "aboutPage",
+  "autorizationForm": "autorizationForm",
+  "cancel": "cancel",
+  "decrement": "decrement",
+  "errorProfile": "errorProfile",
+  "increment": "increment",
+  "mainPage": "mainPage",
+  "page-not-found": "page-not-found",
+  "password": "password",
+  "reloadPage": "reloadPage",
+  "save": "save",
+  "signIn": "signIn",
+  "signOut": "signOut",
+  "throw error": "throw error",
+  "tryReloadPage": "tryReloadPage",
+  "username": "username",
+  "wrongLoginPassword": "wrongLoginPassword"
+}

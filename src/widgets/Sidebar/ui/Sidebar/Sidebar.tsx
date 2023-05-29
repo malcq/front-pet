@@ -1,25 +1,32 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import { ThemeSwitcher } from 'features/ThemeSwitcher';
 import { LangSwitcher } from 'features/LangSwitcher';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonSize, ButtonVariant } from 'shared/ui/Button/Button';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import AboutIcon from 'shared/assets/icons/about.svg';
-import MainIcon from 'shared/assets/icons/main.svg';
+import { SidebarItemsList } from 'widgets/Sidebar/model/items';
 import cls from './Sidebar.module.scss';
+import { SidebarItem } from './SidebarItem/SidebarItem';
 
 interface SidebarProps {
   className?: string;
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const { t } = useTranslation();
+
   const onToggle = () => {
     setIsCollapsed((prev) => !prev);
   };
+
+  const itemsList = useMemo(() => SidebarItemsList.map((item) => (
+    <SidebarItem
+      item={item}
+      isCollapsed={isCollapsed}
+      key={item.path}
+    />
+  )), [isCollapsed]);
+
   return (
     <div
       // eslint-disable-next-line react/no-unknown-property
@@ -41,25 +48,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         {isCollapsed ? '>' : '<'}
       </Button>
       <div className={cls.items}>
-
-        <AppLink
-          theme={AppLinkTheme.SECONDARY}
-          to={RoutePath.main}
-          className={cls.item}
-        >
-          <MainIcon className={cls.icon} />
-          <span className={cls.link}>
-            {t('navbar.mainPage')}
-          </span>
-        </AppLink>
-
-        <AppLink theme={AppLinkTheme.RED} to={RoutePath.about} className={cls.item}>
-          <AboutIcon className={cls.icon} />
-          <span className={cls.link}>
-            {t('navbar.about')}
-          </span>
-        </AppLink>
-
+        {itemsList}
       </div>
       <div className={cls.switchers}>
 
@@ -68,4 +57,4 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </div>
     </div>
   );
-};
+});

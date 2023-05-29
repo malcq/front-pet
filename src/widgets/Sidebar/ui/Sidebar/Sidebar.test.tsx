@@ -6,18 +6,18 @@ import { Sidebar } from 'widgets/Sidebar/ui/Sidebar/Sidebar';
 
 describe('Sidebar', () => {
   test('test render', () => {
-    componentRender(<Sidebar />);
     waitFor(() => {
+      componentRender(<Sidebar />);
       expect(screen.queryByTestId('sidebar')).toBeInTheDocument();
     });
   });
 
   test('test toogle', () => {
-    componentRender(<Sidebar />);
     waitFor(() => {
+      componentRender(<Sidebar />);
       const toggleBtn = screen.queryByTestId('sidebar-toggle');
       expect(screen.getByTestId('sidebar')).toBeInTheDocument();
-      fireEvent.click(toggleBtn);
+      fireEvent.click(toggleBtn as Element);
       expect(screen.queryByTestId('sidebar')).toHaveClass('collapsed');
     });
   });

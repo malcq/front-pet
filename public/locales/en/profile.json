@@ -1,0 +1,18 @@
+{
+  "profilePage": "Profile card",
+  "edit": "edit profile",
+  "first": "Your firstname",
+  "lastname": "Your lastname",
+  "age": "age",
+  "city": "city",
+  "avatar": "url on avatar",
+  "username": "username",
+  "currency": "currency",
+	"validateProfileError": {
+		"age": "wrong age",
+		"userData": "wrong first & lastname",
+		"noData": "fill data, pls",
+		"country": "wrong country",
+		"serverError": "profile server error"
+	}
+}
