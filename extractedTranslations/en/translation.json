@@ -1,5 +1,6 @@
 {
   "PageError": "",
+  "aboutPage": "aboutPage",
   "age": "",
   "autorizationForm": "",
   "avatar": "",
@@ -12,6 +13,7 @@
   "increment": "",
   "language": "",
   "lastname": "",
+  "mainPage": "mainPage",
   "navbar": {
     "about": "",
     "mainPage": ""
