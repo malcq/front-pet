@@ -15,7 +15,7 @@ describe('Counter', () => {
   });
 
   test('increment', async () => {
-    waitFor(() => {
+    waitFor(async () => {
       componentRender(<Counter />, {
         initialState: { counter: { value: 10 } },
       });
@@ -25,7 +25,7 @@ describe('Counter', () => {
   });
 
   test('decrement', async () => {
-    waitFor(() => {
+    waitFor(async () => {
       componentRender(<Counter />, {
         initialState: { counter: { value: 10 } },
       });

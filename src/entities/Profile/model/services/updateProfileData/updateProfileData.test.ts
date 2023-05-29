@@ -34,7 +34,7 @@ describe('updateProfileData.test', () => {
     });
   });
 
-  test('error', () => {
+  test('error', async () => {
     waitFor(async () => {
       const thunk = new TestAsyncThunk(updateProfileData, {
         profile: {
@@ -53,7 +53,7 @@ describe('updateProfileData.test', () => {
     });
   });
 
-  test('validate error', () => {
+  test('validate error', async () => {
     waitFor(async () => {
       const thunk = new TestAsyncThunk(updateProfileData, {
         profile: {
