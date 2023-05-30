@@ -8,7 +8,7 @@
     "main": "Main",
     "about": "About",
     "profile": "Profile",
-		"article": "Article"
+    "article": "Article"
   },
   "loading": "Loading...",
   "PageError": "Something went wrong",
@@ -26,5 +26,6 @@
   "errorProfile": "an error occurred while loading the profile",
   "tryReloadPage": "Please, try reload page",
   "cancel": "cancel",
-  "save": "save"
+  "save": "save",
+  "copy": "copy"
 }

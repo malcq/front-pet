@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Text, TextVariant } from './Text';
+import { Text, TextSize, TextVariant } from './Text';
 
 const meta: Meta<typeof Text> = {
   title: 'shared/Text',
@@ -59,4 +59,11 @@ Error.args = {
   title: 'title text',
   text: 'text primary lorem ipsum',
   textVariant: TextVariant.ERROR,
+};
+
+export const SizeL: Story = {};
+SizeL.args = {
+  title: 'title text',
+  text: 'text primary lorem ipsum',
+  size: TextSize.L,
 };

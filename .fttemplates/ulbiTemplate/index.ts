@@ -1,1 +1,1 @@
-export { <FTName | capitalize> } from './ui/[FTName]';
+export { <FTName | capitalize> } from './[FTName]';

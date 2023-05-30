@@ -6,8 +6,10 @@
   "avatar": "",
   "cancel": "",
   "city": "",
+  "copy": "",
   "decrement": "",
   "edit": "",
+  "errorArticle": "errorArticle",
   "errorProfile": "",
   "first": "",
   "increment": "",
@@ -18,6 +20,8 @@
     "about": "",
     "mainPage": ""
   },
+  "notFound": "notFound",
+  "page": "page",
   "page-not-found": "",
   "password": "",
   "profile": {
