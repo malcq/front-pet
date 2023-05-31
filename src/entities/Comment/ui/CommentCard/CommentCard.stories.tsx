@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { CommentCard } from './CommentCard';
 
 const meta: Meta<typeof CommentCard> = {
-  title: './CommentCard',
+  title: 'entities/CommentCard',
   component: CommentCard,
 };
 
@@ -12,4 +12,4 @@ type Story = StoryObj<typeof CommentCard>;
 export const Primary: Story = {};
 Primary.args = {
 
-}
+};
