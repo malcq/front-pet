@@ -3,9 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonVariant } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
 import { useSelector } from 'react-redux';
-import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
+import {
+  getProfileData, getProfileReadonly, profileActions, updateProfileData,
+} from 'entities/Profile';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getUserAuthData } from 'entities/User';
 import cls from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
@@ -14,6 +17,9 @@ interface ProfilePageHeaderProps {
 
 export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   const { t } = useTranslation(['profile', 'translation']);
+  const authData = useSelector(getUserAuthData);
+  const profileData = useSelector(getProfileData);
+  const canEdit = authData?.id === profileData?.id;
   const readonly = useSelector(getProfileReadonly);
   const dispatch = useAppDispatch();
 
@@ -34,34 +40,39 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
       <Text
         title={t('profile:profilePage')}
       />
-      {readonly ? (
-        <Button
-          className={cls.editBtn}
-          variant={ButtonVariant.OUTLINE}
-          onClick={onEdit}
-        >
-          {t('profile:edit')}
-        </Button>
-      )
-        : (
-          <>
+      {canEdit && (
+        <div className={cls.btnsWrapper}>
+          {readonly ? (
             <Button
-              className={cls.cancelBtn}
-              variant={ButtonVariant.OUTLINE_RED}
-              onClick={onCancelEdit}
-            >
-              {t('translation:cancel')}
-            </Button>
-            <Button
-              className={cls.saveBtn}
+              className={cls.editBtn}
               variant={ButtonVariant.OUTLINE}
-              onClick={onSave}
+              onClick={onEdit}
             >
-              {t('translation:save')}
+              {t('profile:edit')}
             </Button>
-          </>
+          )
+            : (
+              <>
+                <Button
+                  className={cls.cancelBtn}
+                  variant={ButtonVariant.OUTLINE_RED}
+                  onClick={onCancelEdit}
+                >
+                  {t('translation:cancel')}
+                </Button>
+                <Button
+                  className={cls.saveBtn}
+                  variant={ButtonVariant.OUTLINE}
+                  onClick={onSave}
+                >
+                  {t('translation:save')}
+                </Button>
+              </>
 
-        )}
+            )}
+        </div>
+      )}
+
     </div>
   );
 };

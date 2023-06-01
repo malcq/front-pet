@@ -16,8 +16,12 @@
   "page": "page",
   "page-not-found": "page-not-found",
   "password": "password",
+  "placeholder": {
+    "commentary": "commentary"
+  },
   "reloadPage": "reloadPage",
   "save": "save",
+  "send": "send",
   "signIn": "signIn",
   "signOut": "signOut",
   "throw error": "throw error",
