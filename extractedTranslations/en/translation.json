@@ -45,5 +45,11 @@
   "tryReloadPage": "",
   "username": "",
   "wrongCredentials": "",
-  "wrongLoginPassword": ""
+  "wrongLoginPassword": "",
+  "Назад к списку": "Назад к списку",
+  "Читать далее": {
+    "": {
+      "": ""
+    }
+  }
 }

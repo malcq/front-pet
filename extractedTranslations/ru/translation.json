@@ -27,5 +27,11 @@
   "throw error": "throw error",
   "tryReloadPage": "tryReloadPage",
   "username": "username",
-  "wrongLoginPassword": "wrongLoginPassword"
+  "wrongLoginPassword": "wrongLoginPassword",
+  "Назад к списку": "Назад к списку",
+  "Читать далее": {
+    "": {
+      "": ""
+    }
+  }
 }
