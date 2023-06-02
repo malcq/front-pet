@@ -31,8 +31,8 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   )), [sidebarItemsList, isCollapsed]);
 
   return (
-    <div
-      // eslint-disable-next-line react/no-unknown-property
+    <menu
+      // eslint-disable-next-line react/no-unknown-property, i18next/no-literal-string
       date-testid="sidebar"
       className={classNames(cls.Sidebar, { [cls.collapsed]: isCollapsed }, [
         className,
@@ -58,6 +58,6 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         <ThemeSwitcher />
         <LangSwitcher short={isCollapsed} className={cls.lang} />
       </div>
-    </div>
+    </menu>
   );
 });
