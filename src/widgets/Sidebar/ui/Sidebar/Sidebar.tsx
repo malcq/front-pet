@@ -1,12 +1,13 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'features/ThemeSwitcher';
 import { LangSwitcher } from 'features/LangSwitcher';
-import { useTranslation } from 'react-i18next';
 import { Button, ButtonSize, ButtonVariant } from 'shared/ui/Button/Button';
-import { SidebarItemsList } from 'widgets/Sidebar/model/items';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from './SidebarItem/SidebarItem';
+import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 
 interface SidebarProps {
   className?: string;
@@ -15,21 +16,23 @@ interface SidebarProps {
 export const Sidebar = memo(({ className }: SidebarProps) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
+  const sidebarItemsList = useSelector(getSidebarItems);
+
   const onToggle = () => {
     setIsCollapsed((prev) => !prev);
   };
 
-  const itemsList = useMemo(() => SidebarItemsList.map((item) => (
+  const itemsList = useMemo(() => sidebarItemsList.map((item) => (
     <SidebarItem
       item={item}
       isCollapsed={isCollapsed}
       key={item.path}
     />
-  )), [isCollapsed]);
+  )), [sidebarItemsList, isCollapsed]);
 
   return (
-    <div
-      // eslint-disable-next-line react/no-unknown-property
+    <menu
+      // eslint-disable-next-line react/no-unknown-property, i18next/no-literal-string
       date-testid="sidebar"
       className={classNames(cls.Sidebar, { [cls.collapsed]: isCollapsed }, [
         className,
@@ -55,6 +58,6 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         <ThemeSwitcher />
         <LangSwitcher short={isCollapsed} className={cls.lang} />
       </div>
-    </div>
+    </menu>
   );
 });

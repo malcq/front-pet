@@ -5,6 +5,7 @@ import { validateProfileData } from './validateProfileData';
 import { ValidateProfileError } from '../../types/profile';
 
 const data = {
+  id: '1',
   username: 'username',
   age: 22,
   country: Country.Belarus,

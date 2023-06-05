@@ -27,5 +27,9 @@
   "tryReloadPage": "Please, try reload page",
   "cancel": "cancel",
   "save": "save",
-  "copy": "copy"
+  "copy": "copy",
+	"send": "send",
+  "placeholder": {
+		"commentary": "fill comment"
+	}
 }
