@@ -8,7 +8,9 @@
     "main": "Main",
     "about": "About",
     "profile": "Profile",
-    "article": "Article"
+    "article": "Article",
+		"nameApp": "ulbi tv app",
+		"createArticle": "Create article"
   },
   "loading": "Loading...",
   "PageError": "Something went wrong",
