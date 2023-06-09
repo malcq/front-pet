@@ -9,7 +9,9 @@
     "main": "Главная",
     "about": "О сайте",
     "profile": "Профиль",
-    "article": "Статьи"
+    "article": "Статьи",
+		"nameApp": "ulbi tv app",
+		"createArticle": "Создать статью"
   },
   "loading": "Загрузка...",
   "PageError": "Произошла непредвиденная ошибка",
