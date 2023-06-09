@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ArticleEditPage } from './ArticleEditPage';
+import ArticleEditPage from './ArticleEditPage';
 
 const meta: Meta<typeof ArticleEditPage> = {
-  title: './ArticleEditPage',
+  title: 'pages/ArticleEditPage',
   component: ArticleEditPage,
 };
 
