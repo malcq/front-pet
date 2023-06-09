@@ -1,5 +1,6 @@
 {
 	"page": "Article",
 	"notFound": "Article not found",
-	"errorArticle": "an error occurred while loading the article"
+	"errorArticle": "an error occurred while loading the article",
+	"recommendations": "Recommendations"
 }
