@@ -23,6 +23,7 @@ module.exports = {
     'react-hooks',
     '@typescript-eslint',
     'i18next',
+    'front-path-plugin',
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -57,6 +58,7 @@ module.exports = {
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
     'arrow-body-style': 'off',
+    'front-path-plugin/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,

@@ -1,5 +1,5 @@
 import { waitFor } from '@testing-library/react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '../classNames/classNames';
 
 describe('classNames', () => {
   test('with first param', () => {
