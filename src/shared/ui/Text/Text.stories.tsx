@@ -67,3 +67,17 @@ SizeL.args = {
   text: 'text primary lorem ipsum',
   size: TextSize.L,
 };
+
+export const SizeM: Story = {};
+SizeM.args = {
+  title: 'title text',
+  text: 'text primary lorem ipsum',
+  size: TextSize.M,
+};
+
+export const SizeS: Story = {};
+SizeS.args = {
+  title: 'title text',
+  text: 'text primary lorem ipsum',
+  size: TextSize.S,
+};

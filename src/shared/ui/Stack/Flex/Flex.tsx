@@ -1,5 +1,6 @@
-import { ReactNode, memo } from 'react';
-import { useTranslation } from 'react-i18next';
+import {
+  DetailedHTMLProps, HTMLAttributes, ReactNode, memo,
+} from 'react';
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import cls from './Flex.module.scss';
 
@@ -35,7 +36,8 @@ const gapClasses: Record<FlexGap, string> = {
   32: cls.gap32,
 };
 
-export interface FlexProps {
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+export interface FlexProps extends DivProps {
 	children: ReactNode;
 	direction: FlexDirection;
 	className?: string;
@@ -46,7 +48,6 @@ export interface FlexProps {
 }
 
 export const Flex = memo((props: FlexProps) => {
-  const { t } = useTranslation();
   const {
     className,
     children,

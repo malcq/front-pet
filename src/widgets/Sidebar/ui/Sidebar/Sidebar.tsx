@@ -32,16 +32,14 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   )), [sidebarItemsList, isCollapsed]);
 
   return (
-    <menu
-      // eslint-disable-next-line react/no-unknown-property, i18next/no-literal-string
-      date-testid="sidebar"
+    <aside
+      data-testid="sidebar"
       className={classNames(cls.Sidebar, { [cls.collapsed]: isCollapsed }, [
         className,
       ])}
     >
       <Button
-        // eslint-disable-next-line react/no-unknown-property, i18next/no-literal-string
-        date-testid="sidebar-toggle"
+        data-testid="sidebar-toggle"
         type="button"
         onClick={onToggle}
         className={cls.collapseBtn}
@@ -51,7 +49,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       >
         {isCollapsed ? '>' : '<'}
       </Button>
-      <VStack gap="8" className={cls.items}>
+      <VStack role="navigation" gap="8" className={cls.items}>
         {itemsList}
       </VStack>
       <div className={cls.switchers}>
@@ -59,6 +57,6 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         <ThemeSwitcher />
         <LangSwitcher short={isCollapsed} className={cls.lang} />
       </div>
-    </menu>
+    </aside>
   );
 });
