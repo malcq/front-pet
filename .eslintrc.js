@@ -46,7 +46,10 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to', 'target'],
+      ignoreAttribute: [
+        'data-testid', 'to', 'target',
+        'justify', 'align', 'direction', 'gap',
+      ],
     }],
     'max-len': ['error', { code: 125, ignoreComments: true }],
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks

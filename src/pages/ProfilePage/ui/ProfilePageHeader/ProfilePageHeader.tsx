@@ -9,7 +9,7 @@ import {
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
-import cls from './ProfilePageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack';
 
 interface ProfilePageHeaderProps {
 	className?: string;
@@ -36,15 +36,15 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   }, [dispatch]);
 
   return (
-    <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+    // eslint-disable-next-line i18next/no-literal-string
+    <HStack max justify="between" className={classNames('', {}, [className])}>
       <Text
         title={t('profile:profilePage')}
       />
       {canEdit && (
-        <div className={cls.btnsWrapper}>
+        <div>
           {readonly ? (
             <Button
-              className={cls.editBtn}
               variant={ButtonVariant.OUTLINE}
               onClick={onEdit}
             >
@@ -52,27 +52,25 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
             </Button>
           )
             : (
-              <>
+              <HStack gap="8">
                 <Button
-                  className={cls.cancelBtn}
                   variant={ButtonVariant.OUTLINE_RED}
                   onClick={onCancelEdit}
                 >
                   {t('translation:cancel')}
                 </Button>
                 <Button
-                  className={cls.saveBtn}
                   variant={ButtonVariant.OUTLINE}
                   onClick={onSave}
                 >
                   {t('translation:save')}
                 </Button>
-              </>
+              </HStack>
 
             )}
         </div>
       )}
 
-    </div>
+    </HStack>
   );
 };
