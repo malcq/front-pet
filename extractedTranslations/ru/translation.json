@@ -34,6 +34,7 @@
   "reloadPage": "reloadPage",
   "save": "save",
   "search": "search",
+  "selectCurrency": "selectCurrency",
   "send": "send",
   "signIn": "signIn",
   "signOut": "signOut",

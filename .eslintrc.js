@@ -23,6 +23,7 @@ module.exports = {
     'react-hooks',
     '@typescript-eslint',
     'i18next',
+    'front-path-plugin',
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -45,7 +46,11 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to', 'target'],
+      ignoreAttribute: [
+        'role', 'as',
+        'data-testid', 'to', 'target',
+        'justify', 'align', 'direction', 'gap',
+      ],
     }],
     'max-len': ['error', { code: 125, ignoreComments: true }],
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
@@ -57,6 +62,7 @@ module.exports = {
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
     'arrow-body-style': 'off',
+    'front-path-plugin/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,

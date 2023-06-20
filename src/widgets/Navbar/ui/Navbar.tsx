@@ -9,6 +9,8 @@ import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 import { Text, TextVariant } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { DropDownMenu } from 'shared/ui/DropDownMenu/DropDownMenu';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -48,13 +50,21 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         >
           {t('navbar.createArticle')}
         </AppLink>
-        <Button
-          variant={ButtonVariant.CLEAR_INVERTED}
-          className={cls.links}
-          onClick={onLogOut}
-        >
-          {t('signOut')}
-        </Button>
+        <DropDownMenu
+          direction="bottom left"
+          className={cls.dropdownMenu}
+          items={[
+            {
+              content: 'Профиль',
+              href: RoutePath.profile + authData.id,
+            },
+            {
+              content: t('signOut'),
+              onClick: onLogOut,
+            },
+          ]}
+          trigger={<Avatar size={30} src={authData.avatar} />}
+        />
       </header>
     );
   }
