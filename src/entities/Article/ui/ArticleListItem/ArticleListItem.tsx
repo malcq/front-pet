@@ -26,6 +26,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const {
     className, article, view, target,
   } = props;
+  console.log(article, 'da 1');
+
   const { t } = useTranslation();
   const types = <Text text={article.type.join(', ')} className={cls.types} />;
 

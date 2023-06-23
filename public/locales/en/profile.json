@@ -8,6 +8,7 @@
   "avatar": "url on avatar",
   "username": "username",
   "currency": "currency",
+	"notFound": "Profile not found",
 	"validateProfileError": {
 		"age": "wrong age",
 		"userData": "wrong first & lastname",

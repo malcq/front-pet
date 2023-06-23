@@ -1,21 +1,22 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonVariant } from 'shared/ui/Button/Button';
-import { Text } from 'shared/ui/Text/Text';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { useSelector } from 'react-redux';
-import {
-  getProfileData, getProfileReadonly, profileActions, updateProfileData,
-} from 'entities/Profile';
-import { useCallback } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { HStack } from 'shared/ui/Stack';
+import { Text } from 'shared/ui/Text/Text';
+import { Button, ButtonVariant } from 'shared/ui/Button/Button';
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { profileActions } from '../../model/slice/profileSlice';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 
-interface ProfilePageHeaderProps {
+interface EditableProfileCardHeaderProps {
 	className?: string;
 }
 
-export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
+export const EditableProfileCardHeader = memo(({ className }: EditableProfileCardHeaderProps) => {
   const { t } = useTranslation(['profile', 'translation']);
   const authData = useSelector(getUserAuthData);
   const profileData = useSelector(getProfileData);
@@ -36,7 +37,6 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   }, [dispatch]);
 
   return (
-    // eslint-disable-next-line i18next/no-literal-string
     <HStack max justify="between" className={classNames('', {}, [className])}>
       <Text
         title={t('profile:profilePage')}
@@ -70,7 +70,6 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
             )}
         </div>
       )}
-
     </HStack>
   );
-};
+});

@@ -87,7 +87,7 @@
     {
       "id": "2",
       "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Python за 2022 год?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
       "views": 5204,
       "createdAt": "26.02.2022",
@@ -111,7 +111,7 @@
     {
       "id": "3",
       "title": "Kotlin news 2019",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Kotlin news 2019?",
       "img": "https://images.prismic.io/qovery/c952e642-7c8c-4e2f-854e-b14a14868b3e_kotlin.png?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&q=50",
       "views": 94002,
       "createdAt": "26.02.2019",
@@ -634,8 +634,8 @@
   "profile": [
     {
       "id": "1",
-      "first": "jghwer",
-      "lastname": "asfewr",
+      "first": "pavel",
+      "lastname": "kek",
       "age": 465,
       "currency": "EUR",
       "country": "Belarus",

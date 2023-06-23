@@ -17,6 +17,7 @@
   "edit": "edit",
   "editArticle": "editArticle",
   "errorArticle": "errorArticle",
+  "errorLoading": "errorLoading",
   "errorProfile": "errorProfile",
   "increment": "increment",
   "mainPage": "mainPage",

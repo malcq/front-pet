@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleEditForm } from './ArticleEditForm';
 
 const meta: Meta<typeof ArticleEditForm> = {
-  title: './ArticleEditForm',
+  title: 'features/ArticleEditForm/ArticleEditForm',
   component: ArticleEditForm,
 };
 
