@@ -79,6 +79,16 @@ export default {
 
   modulePaths: ['<rootDir>src'],
 
+  reporters: [
+    'default',
+    ['jest-html-reporters', {
+      publicPath: '<rootDir>/reports/unit',
+      filename: 'report.html',
+      openReport: true,
+      inlineSource: true,
+    }],
+  ],
+
   // An array of file extensions your modules use
   moduleFileExtensions: [
     'js',
