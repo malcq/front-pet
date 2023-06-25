@@ -4,7 +4,7 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserInited, userActions } from 'entities/User';
+import { User, getUserInited, userActions } from 'entities/User';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 import { AppRouter } from './providers/router';
 
@@ -14,12 +14,10 @@ const App = () => {
   const inited = useSelector(getUserInited);
 
   useEffect(() => {
-    const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
-
-    if (user) {
-      dispatch(userActions.initAuthData(JSON.parse(user)));
-    }
+    const user = localStorage.getItem(USER_LOCALSTORAGE_KEY) || '';
+    dispatch(userActions.initAuthData(JSON.parse(user)));
   }, [dispatch]);
+
   return (
     <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">

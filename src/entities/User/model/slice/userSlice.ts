@@ -14,12 +14,16 @@ const userSlice = createSlice({
       state.authData = action.payload;
     },
     initAuthData: (state, action: PayloadAction<User>) => {
-      state.authData = action.payload;
+      if (action?.payload) {
+        state.authData = action.payload;
+      }
+
       state._inited = true;
     },
 
     logout: (state) => {
       state.authData = undefined;
+      localStorage.removeItem(USER_LOCALSTORAGE_KEY);
     },
   },
 });
