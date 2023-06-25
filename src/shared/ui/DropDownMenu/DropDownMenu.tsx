@@ -45,9 +45,10 @@ export function DropDownMenu(props: DropDownMenuProps) {
     >
       <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
       <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
-        {items.map((item) => {
+        {items.map((item, index) => {
           const content = ({ active }: { active: boolean }) => (
             <button
+              key={index}
               type="button"
               className={classNames(cls.item, { [cls.active]: active })}
               onClick={item.onClick}
