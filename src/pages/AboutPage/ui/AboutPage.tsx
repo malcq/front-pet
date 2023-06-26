@@ -1,10 +1,10 @@
-import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Page } from 'widgets/Page/Page';
 
-const AboutPage = memo(() => {
+const AboutPage = () => {
   const { t } = useTranslation('about');
 
-  return <div>{t('aboutPage')}</div>;
-});
+  return <Page>{t('aboutPage')}</Page>;
+};
 
 export default AboutPage;

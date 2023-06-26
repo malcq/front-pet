@@ -8,6 +8,7 @@
   "navbar": {
     "main": "Главная",
     "about": "О сайте",
+		"admin": "Админка",
     "profile": "Профиль",
     "article": "Статьи",
 		"nameApp": "ulbi tv app",

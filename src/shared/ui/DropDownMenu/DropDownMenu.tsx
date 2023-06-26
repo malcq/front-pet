@@ -7,6 +7,7 @@ import cls from './DropDownMenu.module.scss';
 import { AppLink } from '../AppLink/AppLink';
 
 export interface DropDownItem {
+	id: string;
 	disabled?: boolean;
 	content?: ReactNode;
 	onClick?: () => void;
@@ -48,7 +49,7 @@ export function DropDownMenu(props: DropDownMenuProps) {
         {items.map((item, index) => {
           const content = ({ active }: { active: boolean }) => (
             <button
-              key={index}
+              key={item.id + index}
               type="button"
               className={classNames(cls.item, { [cls.active]: active })}
               onClick={item.onClick}
@@ -59,13 +60,22 @@ export function DropDownMenu(props: DropDownMenuProps) {
           );
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+              <Menu.Item
+                key={item.id + index}
+                as={AppLink}
+                to={item.href}
+                disabled={item.disabled}
+              >
                 {content}
               </Menu.Item>
             );
           }
           return (
-            <Menu.Item as={Fragment} disabled={item.disabled}>
+            <Menu.Item
+              key={item.id + index}
+              as={Fragment}
+              disabled={item.disabled}
+            >
               {content}
             </Menu.Item>
           );
