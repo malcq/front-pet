@@ -17,7 +17,6 @@ export const fetchArticleRecommendations = createAsyncThunk<
           _limit: 4,
         },
       });
-      console.log(response, 'response');
 
       if (!response.data) {
         throw new Error();

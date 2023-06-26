@@ -12,4 +12,4 @@ type Story = StoryObj<typeof AdminPanelPage>;
 export const Primary: Story = {};
 Primary.args = {
 
-}
+};

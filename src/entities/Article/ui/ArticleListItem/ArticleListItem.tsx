@@ -9,9 +9,10 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, ButtonVariant } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 import cls from './ArticleListItem.module.scss';
 import {
-  Article, ArticleBlockType, ArticleTextBlock, ArticleView,
+  Article, ArticleTextBlock,
 } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
@@ -26,8 +27,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const {
     className, article, view, target,
   } = props;
-  console.log(article, 'da 1');
-
   const { t } = useTranslation();
   const types = <Text text={article.type.join(', ')} className={cls.types} />;
 
