@@ -6,6 +6,7 @@ import CircularDependencyPlugin from 'circular-dependency-plugin';
 import webpack from 'webpack';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { BuildOptions } from './types/config';
 
 export function buildPlugins({
@@ -36,6 +37,15 @@ export function buildPlugins({
     new CircularDependencyPlugin({
       exclude: /node_modules/,
       failOnError: true,
+    }),
+    new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        diagnosticOptions: {
+          semantic: true,
+          syntactic: true,
+        },
+        mode: 'write-references',
+      },
     }),
   ];
 

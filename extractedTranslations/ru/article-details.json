@@ -1,3 +1,8 @@
 {
+  "backToList": "backToList",
+  "createArticle": "createArticle",
+  "edit": "edit",
+  "editArticle": "editArticle",
+  "errorArticle": "errorArticle",
   "recommendations": "recommendations"
 }

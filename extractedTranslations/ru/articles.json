@@ -1,0 +1,18 @@
+{
+  "ascending": "ascending",
+  "by": "by",
+  "creationDate": "creationDate",
+  "descending": "descending",
+  "errorLoading": "errorLoading",
+  "notFound": "notFound",
+  "search": "search",
+  "sortBy": "sortBy",
+  "tabs": {
+    "all": "all",
+    "economics": "economics",
+    "it": "it",
+    "science": "science"
+  },
+  "title": "title",
+  "views": "views"
+}
