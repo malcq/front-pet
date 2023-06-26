@@ -21,7 +21,7 @@ import { ValidateProfileError } from '../../model/types/editableProfileCardSchem
 import { EditableProfileCardHeader } from '../editableProfileCardHeader/editableProfileCardHeader';
 
 interface EditableProfileCardProps {
-	id: string;
+	id?: string;
 	className?: string;
 }
 

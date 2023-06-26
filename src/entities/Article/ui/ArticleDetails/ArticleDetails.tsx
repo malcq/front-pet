@@ -27,7 +27,7 @@ import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
-	id: string;
+	id?: string;
 	className?: string;
 }
 

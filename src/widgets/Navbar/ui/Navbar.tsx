@@ -25,6 +25,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const dispatch = useDispatch();
   const isAdmin = useSelector(isUserAdmin);
   const isManager = useSelector(isUserManager);
+  console.log(isAdmin, 'isAdmin');
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);

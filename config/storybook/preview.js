@@ -1,5 +1,6 @@
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { I18nDecorator } from '../../src/shared/config/storybook/I18nDecorator/I18nDecorator';
 
@@ -34,4 +35,5 @@ export const decorators = [
   StyleDecorator,
   ThemeDecorator(Theme.LIGHT),
   RouterDecorator,
+  SuspenseDecorator,
 ];

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ForbiddenPage } from './ForbiddenPage';
+import ForbiddenPage from './ForbiddenPage';
 
 const meta: Meta<typeof ForbiddenPage> = {
-  title: './ForbiddenPage',
+  title: 'pages/ForbiddenPage',
   component: ForbiddenPage,
 };
 
@@ -12,4 +12,4 @@ type Story = StoryObj<typeof ForbiddenPage>;
 export const Primary: Story = {};
 Primary.args = {
 
-}
+};
