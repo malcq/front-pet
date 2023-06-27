@@ -17,7 +17,7 @@ const recommenadtionsApi = rtkApi.injectEndpoints({
         params: {
           _limit: limit,
         },
-        method: 'POSt',
+        method: 'POST',
       }),
     }),
   }),
