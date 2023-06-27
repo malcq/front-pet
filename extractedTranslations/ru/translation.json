@@ -1,6 +1,7 @@
 {
   "PageError": "PageError",
   "aboutPage": "aboutPage",
+  "adminPage": "adminPage",
   "ascending": "ascending",
   "autorizationForm": "autorizationForm",
   "backToList": "backToList",
@@ -17,12 +18,16 @@
   "edit": "edit",
   "editArticle": "editArticle",
   "errorArticle": "errorArticle",
+  "errorLoading": "errorLoading",
   "errorProfile": "errorProfile",
+  "forbiddenPage": "forbiddenPage",
   "increment": "increment",
   "mainPage": "mainPage",
   "navbar": {
+    "admin": "admin",
     "createArticle": "createArticle",
-    "nameApp": "nameApp"
+    "nameApp": "nameApp",
+    "profile": "profile"
   },
   "notFound": "notFound",
   "page": "page",

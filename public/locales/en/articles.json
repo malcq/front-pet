@@ -8,6 +8,7 @@
 	"title": "title",
 	"views": "views",
 	"notFound": "articles not founded",
+	"errorLoading": "Error loading articles",
 	"tabs": {
 		"it": "It",
 		"all": "All articles",

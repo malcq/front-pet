@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import AvatarImg from 'shared/assets/tests/avatar.jpg';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import ProfilePage from './ProfilePage';
