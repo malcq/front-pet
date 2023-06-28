@@ -11,23 +11,6 @@
   align-items: flex-end;
 }
 
-.content {
-  height: 70%;
-  background: var(--bg-color);
-  bottom: 0;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  position: relative;
-  width: 100%;
-  min-height: 100px;
-  padding: 20px;
-  transition: 0.3s transform;
-  transform: translateY(100%);
-  overflow-y: auto;
-  overflow-x: hidden;
-  z-index: var(--drawer-z-index);
-}
-
 .opened {
   pointer-events: auto;
   opacity: 1;

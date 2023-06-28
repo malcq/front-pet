@@ -15,7 +15,7 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      "@/*": ["./src/*"]
     },
 		"types": ["node"],
     // esModuleInterop позволяет работать с пакетами, которые используют

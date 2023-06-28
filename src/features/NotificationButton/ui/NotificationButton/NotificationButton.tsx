@@ -2,14 +2,14 @@ import { memo, useCallback, useState } from 'react';
 import {
   BrowserView, MobileView, isBrowser, isMobile,
 } from 'react-device-detect';
-import { Popover } from 'shared/ui/Popups';
-import { Button, ButtonVariant } from 'shared/ui/Button/Button';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { NotificationList } from 'entities/Notification';
-import NotificationIcon from 'shared/assets/icons/notification.svg';
-import { Drawer } from 'shared/ui/Drawer/Drawer';
-import { useDevice } from 'shared/lib/hooks/useDevice/useDevice';
-import { AnimationProvider } from 'shared/lib/components/AnimationProvider';
+import { Popover } from '@/shared/ui/Popups';
+import { Button, ButtonVariant } from '@/shared/ui/Button/Button';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { NotificationList } from '@/entities/Notification';
+import NotificationIcon from '@/shared/assets/icons/notification.svg';
+import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
+import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
 import cls from './NotificationButton.module.scss';
 
 interface NotificationButtonProps {
@@ -71,7 +71,6 @@ export const NotificationButton = memo(({ className }: NotificationButtonProps) 
 						<NotificationList />
 					</Drawer>
       </MobileView> */}
-
     </div>
 
   );

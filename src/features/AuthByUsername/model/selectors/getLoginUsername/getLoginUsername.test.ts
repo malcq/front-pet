@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/providers/StoreProvider';
 import { waitFor } from '@testing-library/react';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { getLoginUsername } from './getLoginUsername';
 
 describe('getLoginError.test', () => {

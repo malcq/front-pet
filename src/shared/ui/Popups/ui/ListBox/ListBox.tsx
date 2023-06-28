@@ -1,7 +1,7 @@
 import { Fragment, ReactNode, useState } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
-import { Mods, classNames } from 'shared/lib/classNames/classNames';
-import { DropdownDirection } from 'shared/types/ui';
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+import { DropdownDirection } from '@/shared/types/ui';
 import { HStack } from '../../../Stack';
 import { Button } from '../../../Button/Button';
 import { mapDirectionClass } from '../../styles/consts';

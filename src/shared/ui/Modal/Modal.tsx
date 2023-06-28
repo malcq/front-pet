@@ -1,4 +1,3 @@
-import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import {
   MutableRefObject,
   ReactNode,
@@ -7,7 +6,8 @@ import {
   useRef,
   useState,
 } from 'react';
-import { useTheme } from 'app/providers/ThemeProvider';
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+import { useTheme } from '@/app/providers/ThemeProvider';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
 import { Overlay } from '../Overlay/Overlay';
