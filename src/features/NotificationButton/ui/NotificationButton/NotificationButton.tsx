@@ -41,13 +41,14 @@ export const NotificationButton = memo(({ className }: NotificationButtonProps) 
 
   return (
     <div>
+
       {isMobile ? (
-        <>
+        <div>
           {trigger}
           <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
             <NotificationList />
           </Drawer>
-        </>
+        </div>
 
       ) : (
         <Popover
@@ -56,6 +57,7 @@ export const NotificationButton = memo(({ className }: NotificationButtonProps) 
         >
           <NotificationList className={cls.notifications} />
         </Popover>
+
       ) }
       {/* <BrowserView renderWithFragment>
         <Popover
