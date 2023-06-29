@@ -43,7 +43,6 @@ export function DropDownMenu(props: DropDownMenuProps) {
         {items.map((item, index) => {
           const content = ({ active }: { active: boolean }) => (
             <button
-              key={item.id + index}
               type="button"
               className={classNames(cls.item, { [popupsCls.active]: active })}
               onClick={item.onClick}
@@ -55,7 +54,7 @@ export function DropDownMenu(props: DropDownMenuProps) {
           if (item.href) {
             return (
               <Menu.Item
-                key={item.id + index}
+                key={`dropdown-key${index}`}
                 as={AppLink}
                 to={item.href}
                 disabled={item.disabled}
@@ -66,7 +65,7 @@ export function DropDownMenu(props: DropDownMenuProps) {
           }
           return (
             <Menu.Item
-              key={item.id + index}
+              key={`dropdown-key${index}`}
               as={Fragment}
               disabled={item.disabled}
             >
