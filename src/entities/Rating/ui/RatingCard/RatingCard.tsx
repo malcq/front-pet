@@ -17,8 +17,9 @@ interface RatingCardProps {
 	title?: string;
 	feedbackTitle?: string;
 	hasFeedback?: boolean;
-	onCancel?: (starCount: number) => void;
-	onAccept?: (starCount: number, feedback?: string) => void;
+	onCancel?: (starsCount: number) => void;
+	onAccept?: (starsCount: number, feedback?: string) => void;
+	rate?: number;
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
@@ -29,10 +30,11 @@ export const RatingCard = memo((props: RatingCardProps) => {
     hasFeedback,
     onCancel,
     onAccept,
+    rate = 0,
   } = props;
   const { t } = useTranslation(['translation', 'article-details']);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [starsCount, setStarsCount] = useState(0);
+  const [starsCount, setStarsCount] = useState(rate);
   const [feedback, setFeedback] = useState('');
 
   const onSelectStars = useCallback((selectedStarsCount: number) => {
@@ -63,10 +65,10 @@ export const RatingCard = memo((props: RatingCardProps) => {
   );
   const { isDesktop } = useDevice();
   return (
-    <Card className={classNames(cls.RatingCard, {}, [className])}>
+    <Card className={className} max>
       <VStack align="center" gap="8">
-        <Text title={title} />
-        <StarRating size={40} onSelect={onSelectStars} />
+        <Text title={starsCount ? t('article-details:selectedRating') : title} />
+        <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
       </VStack>
       {isDesktop ? (
         <Modal isOpen={isModalOpen} lazy>
