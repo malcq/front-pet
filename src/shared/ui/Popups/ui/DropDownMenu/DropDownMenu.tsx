@@ -1,10 +1,11 @@
 import { Fragment, ReactNode } from 'react';
-import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { Menu } from '@headlessui/react';
-import { DropdownDirection } from 'shared/types/ui';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DropdownDirection } from '@/shared/types/ui';
 import cls from './DropDownMenu.module.scss';
-import { AppLink } from '../AppLink/AppLink';
+import { AppLink } from '../../../AppLink/AppLink';
+import { mapDirectionClass } from '../../styles/consts';
+import popupsCls from '../../styles/popups.module.scss';
 
 export interface DropDownItem {
 	id: string;
@@ -20,18 +21,11 @@ interface DropDownMenuProps {
 	trigger?: ReactNode;
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  'top right': cls.optionsTopRight,
-  'top left': cls.optionsTopLeft,
-  'bottom right': cls.optionsBottomRight,
-  'bottom left': cls.optionsBottomLeft,
-};
-
 export function DropDownMenu(props: DropDownMenuProps) {
   const {
     className,
-    trigger,
     items,
+    trigger,
     direction = 'bottom right',
   } = props;
 
@@ -42,16 +36,15 @@ export function DropDownMenu(props: DropDownMenuProps) {
   return (
     <Menu
       as="div"
-      className={classNames(cls.DropDownMenu, {}, [className])}
+      className={classNames(cls.DropDownMenu, {}, [className, popupsCls.popup])}
     >
-      <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
+      <Menu.Button className={popupsCls.trigger}>{trigger}</Menu.Button>
       <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
         {items.map((item, index) => {
           const content = ({ active }: { active: boolean }) => (
             <button
-              key={item.id + index}
               type="button"
-              className={classNames(cls.item, { [cls.active]: active })}
+              className={classNames(cls.item, { [popupsCls.active]: active })}
               onClick={item.onClick}
               disabled={item.disabled}
             >
@@ -61,7 +54,7 @@ export function DropDownMenu(props: DropDownMenuProps) {
           if (item.href) {
             return (
               <Menu.Item
-                key={item.id + index}
+                key={`dropdown-key${index}`}
                 as={AppLink}
                 to={item.href}
                 disabled={item.disabled}
@@ -72,7 +65,7 @@ export function DropDownMenu(props: DropDownMenuProps) {
           }
           return (
             <Menu.Item
-              key={item.id + index}
+              key={`dropdown-key${index}`}
               as={Fragment}
               disabled={item.disabled}
             >

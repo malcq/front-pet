@@ -6,5 +6,9 @@
 	"backToList": "Back to list",
 	"edit": "edit",
 	"editArticle": "Edit article with",
-	"createArticle": "Create article"
+	"createArticle": "Create article",
+	"feedbackRating": "Your feedback",
+	"titleRating": "rate the article",
+	"feedbackTitleRating": "Leave your feedback in the article, it will help improve the quality",
+	"selectedRating": "thank you for rating"
 }

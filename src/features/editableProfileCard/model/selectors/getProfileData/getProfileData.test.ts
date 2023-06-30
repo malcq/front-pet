@@ -1,7 +1,7 @@
-import { StateSchema } from 'app/providers/StoreProvider';
 import { waitFor } from '@testing-library/react';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 import { getProfileData } from './getProfileData';
 
 describe('getProfileData.test', () => {

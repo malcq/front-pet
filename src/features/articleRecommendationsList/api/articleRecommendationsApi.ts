@@ -1,5 +1,5 @@
-import { Article } from 'entities/Article';
-import { rtkApi } from 'shared/api/rtkApi';
+import { Article } from '@/entities/Article';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 const recommenadtionsApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
@@ -17,7 +17,7 @@ const recommenadtionsApi = rtkApi.injectEndpoints({
         params: {
           _limit: limit,
         },
-        method: 'POSt',
+        method: 'POST',
       }),
     }),
   }),
