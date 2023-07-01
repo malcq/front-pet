@@ -4,7 +4,11 @@
   "edit": "",
   "editArticle": "",
   "errorArticle": "",
+  "feedbackRating": "",
+  "feedbackTitleRating": "",
   "notFound": "",
   "page": "",
-  "recommendations": "recommendations"
+  "recommendations": "recommendations",
+  "selectedRating": "",
+  "titleRating": ""
 }
