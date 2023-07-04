@@ -24,9 +24,11 @@ module.exports = {
     '@typescript-eslint',
     'i18next',
     'front-path-plugin',
+    'unused-imports',
   ],
   rules: {
     'react/jsx-indent': [2, 2],
+    'unused-imports/no-unused-imports': 'error',
     indent: [2, 2],
     'no-tabs': 0,
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
