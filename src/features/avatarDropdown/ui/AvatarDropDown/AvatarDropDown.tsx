@@ -3,12 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropDownMenu } from '@/shared/ui/Popups';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+
 import {
   getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
+import { RoutePath } from '@/shared/const/router';
 
 interface AvatarDropDownProps {
 	className?: string;
