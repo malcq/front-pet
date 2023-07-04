@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { LangSwitcher } from '@/features/LangSwitcher';
-import { Button, ButtonSize, ButtonVariant } from '@/shared/ui/Button/Button';
+import { Button, ButtonSize, ButtonVariant } from '@/shared/ui/Button';
 import { VStack } from '@/shared/ui/Stack';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from './SidebarItem/SidebarItem';

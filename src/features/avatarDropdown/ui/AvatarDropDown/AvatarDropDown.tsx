@@ -7,7 +7,7 @@ import { DropDownMenu } from '@/shared/ui/Popups';
 import {
   getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
 import { RoutePath } from '@/shared/const/router';
 
