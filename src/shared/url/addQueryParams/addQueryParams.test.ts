@@ -1,4 +1,5 @@
 import { waitFor } from '@testing-library/react';
+
 import { getQueryParams } from './addQueryParams';
 
 describe('shared/url/addQueryParams.test', () => {

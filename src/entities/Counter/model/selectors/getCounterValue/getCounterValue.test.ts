@@ -1,5 +1,7 @@
 import { waitFor } from '@testing-library/react';
+
 import { StateSchema } from '@/app/providers/StoreProvider';
+
 import { getCounterValue } from './getCounterValue';
 
 describe('getCounterValue.test', () => {

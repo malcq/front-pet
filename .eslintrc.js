@@ -29,6 +29,30 @@ module.exports = {
   rules: {
     'react/jsx-indent': [2, 2],
     'unused-imports/no-unused-imports': 'error',
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal'],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '@/**',
+            group: 'external',
+            position: 'after',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['react'],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
     indent: [2, 2],
     'no-tabs': 0,
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
