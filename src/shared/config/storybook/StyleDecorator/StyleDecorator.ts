@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import '@/app/styles/index.scss';
 
 import { StoryObj } from '@storybook/react';

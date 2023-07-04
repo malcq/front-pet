@@ -63,6 +63,13 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'arrow-body-style': 'off',
     'front-path-plugin/path-checker': ['error', { alias: '@' }],
+    'front-path-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
+    ],
     'front-path-plugin/public-fsd-api-imports': [
       'error',
       {
