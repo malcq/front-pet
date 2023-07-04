@@ -62,7 +62,8 @@ module.exports = {
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
     'arrow-body-style': 'off',
-    'front-path-plugin/path-checker': 'error',
+    'front-path-plugin/path-checker': ['error', { alias: '@' }],
+    'front-path-plugin/public-fsd-api-imports': ['error', { alias: '@' }],
   },
   globals: {
     __IS_DEV__: true,

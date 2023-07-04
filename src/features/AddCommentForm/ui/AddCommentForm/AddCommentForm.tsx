@@ -11,7 +11,7 @@ import { addCommentFormActions, addCommentFormReducer } from '../../model/slices
 import {
   getAddCommentFormError,
   getAddCommentFormText,
-} from '../../selectors/addCommentFormSelectors';
+} from '../../model/selectors/addCommentFormSelectors';
 import cls from './AddCommentForm.module.scss';
 
 export interface AddCommentFormProps {

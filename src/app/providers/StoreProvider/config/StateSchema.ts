@@ -8,7 +8,7 @@ import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
 import { AddCommentFormSchema } from '@/features/AddCommentForm';
 import { LoginSchema } from '@/features/AuthByUsername';
-import { UISchema } from '@/features/UI/model/types/UIShema';
+import { UISchema } from '@/features/UI';
 import { ProfileSchema } from '@/features/editableProfileCard';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { ArticlePageSchema } from '@/pages/ArticlesPage';

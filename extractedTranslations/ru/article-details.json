@@ -4,5 +4,9 @@
   "edit": "edit",
   "editArticle": "editArticle",
   "errorArticle": "errorArticle",
-  "recommendations": "recommendations"
+  "feedbackRating": "feedbackRating",
+  "feedbackTitleRating": "feedbackTitleRating",
+  "recommendations": "recommendations",
+  "selectedRating": "selectedRating",
+  "titleRating": "titleRating"
 }
