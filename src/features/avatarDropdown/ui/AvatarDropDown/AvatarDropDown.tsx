@@ -7,7 +7,7 @@ import {
   getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar';
 import { DropDownMenu } from '@/shared/ui/Popups';
@@ -42,12 +42,12 @@ export const AvatarDropDown = memo(({ className }: AvatarDropDownProps) => {
         ...(isAdminPanelAvailable ? [{
           id: t('navbar.admin'),
           content: t('navbar.admin'),
-          href: RoutePath.admin_panel,
+          href: getRouteAdmin(),
         }] : []),
         {
           id: t('navbar.profile'),
           content: t('navbar.profile'),
-          href: RoutePath.profile + authData.id,
+          href: getRouteProfile(authData.id),
         },
         {
           id: t('signOut'),
