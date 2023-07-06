@@ -3,14 +3,17 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleSortSelector } from './ArticleSortSelector';
 
 const meta: Meta<typeof ArticleSortSelector> = {
-  title: 'entities/Article/ArticleSortSelector',
+  title: 'features/ArticleSortSelector',
   component: ArticleSortSelector,
-};
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as Meta;
 
 export default meta;
 type Story = StoryObj<typeof ArticleSortSelector>;
+export const Normal: Story = {};
 
-export const Primary: Story = {};
-Primary.args = {
+Normal.args = {
 
 };
