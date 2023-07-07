@@ -33,6 +33,7 @@
   "copy": "copy",
 	"send": "send",
 	"close": "close",
+	"addFive": "add five",
   "placeholder": {
 		"commentary": "fill comment"
 	}

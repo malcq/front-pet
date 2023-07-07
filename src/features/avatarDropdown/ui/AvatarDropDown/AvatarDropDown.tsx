@@ -1,14 +1,16 @@
 import { memo, useCallback } from 'react';
+
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { DropDownMenu } from '@/shared/ui/Popups';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+
 import {
   getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Avatar } from '@/shared/ui/Avatar';
+import { DropDownMenu } from '@/shared/ui/Popups';
 
 interface AvatarDropDownProps {
 	className?: string;
@@ -40,12 +42,12 @@ export const AvatarDropDown = memo(({ className }: AvatarDropDownProps) => {
         ...(isAdminPanelAvailable ? [{
           id: t('navbar.admin'),
           content: t('navbar.admin'),
-          href: RoutePath.admin_panel,
+          href: getRouteAdmin(),
         }] : []),
         {
           id: t('navbar.profile'),
           content: t('navbar.profile'),
-          href: RoutePath.profile + authData.id,
+          href: getRouteProfile(authData.id),
         },
         {
           id: t('signOut'),

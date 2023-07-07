@@ -1,6 +1,7 @@
 {
   "PageError": "",
   "aboutPage": "aboutPage",
+  "addFive": "",
   "adminPage": "adminPage",
   "age": "",
   "ascending": "ascending",
@@ -10,6 +11,7 @@
   "by": "by",
   "cancel": "",
   "city": "",
+  "close": "",
   "commentIsEmpty": "commentIsEmpty",
   "commentaries": "commentaries",
   "comments": "comments",

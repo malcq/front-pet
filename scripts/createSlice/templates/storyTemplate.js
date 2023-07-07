@@ -7,7 +7,7 @@ const meta: Meta<typeof ${componentName}> = {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-};
+} as Meta;
 
 export default meta;
 type Story = StoryObj<typeof ${componentName}>;

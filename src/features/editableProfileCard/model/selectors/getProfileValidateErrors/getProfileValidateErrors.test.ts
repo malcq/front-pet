@@ -1,7 +1,9 @@
 import { waitFor } from '@testing-library/react';
+
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { ValidateProfileError } from '../../consts/consts';
+
 import { getProfileValidateErrors } from './getProfileValidateErrors';
+import { ValidateProfileError } from '../../consts/consts';
 
 describe('getProfileValidateErrors.test', () => {
   test('should work with filled state', () => {

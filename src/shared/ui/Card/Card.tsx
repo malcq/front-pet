@@ -1,6 +1,7 @@
 import { HTMLAttributes, ReactNode, memo } from 'react';
-import { useTranslation } from 'react-i18next';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
+
 import cls from './Card.module.scss';
 
 export enum CardVariant {

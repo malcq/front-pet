@@ -1,10 +1,10 @@
-import { ReactNode, memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { memo, useCallback } from 'react';
+
 import CopyIcon from '@/shared/assets/icons/copy.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+
 import cls from './Code.module.scss';
 import { Button, ButtonVariant } from '../Button/Button';
-import { Icon } from '../Icon/Icon';
 
 interface CodeProps {
 	text: string;

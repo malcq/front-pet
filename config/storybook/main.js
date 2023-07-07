@@ -4,9 +4,15 @@ const config = {
   ],
   addons: [
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        backgrounds: false,
+      },
+    },
     '@storybook/addon-interactions',
     'storybook-addon-mock',
+    'storybook-addon-themes',
   ],
   features: {
     storyStoreV7: true,
