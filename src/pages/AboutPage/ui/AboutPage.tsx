@@ -8,11 +8,6 @@ const AboutPage = () => {
   return (
     <Page>
       {t('aboutPage')}
-      asdsadsa
-      asdsadsad
-
-      asdad
-
     </Page>
   );
 };
