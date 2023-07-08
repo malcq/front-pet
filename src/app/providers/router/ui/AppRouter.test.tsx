@@ -48,13 +48,15 @@ describe('app/router/AppRouter.test', () => {
   });
 
   /*  test('Доступ запрещён (отсутствует роль)', async () => {
-    componentRender(<AppRouter />, {
-      route: getRouteAdmin(),
-      initialState: {
-        user: {
-          _inited: true, authData: {},
+    waitFor(() => {
+      componentRender(<AppRouter />, {
+        route: getRouteAdmin(),
+        initialState: {
+          user: {
+            _inited: true, authData: {},
+          },
         },
-      },
+      });
     });
 
     const page = await screen.findByTestId('ForbiddenPage');
