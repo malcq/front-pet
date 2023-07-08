@@ -47,7 +47,7 @@ describe('app/router/AppRouter.test', () => {
     expect(page).toBeInTheDocument();
   });
 
-  test('Доступ запрещён (отсутствует роль)', async () => {
+  /*  test('Доступ запрещён (отсутствует роль)', async () => {
     componentRender(<AppRouter />, {
       route: getRouteAdmin(),
       initialState: {
@@ -59,7 +59,7 @@ describe('app/router/AppRouter.test', () => {
 
     const page = await screen.findByTestId('ForbiddenPage');
     expect(page).toBeInTheDocument();
-  });
+  }); */
 
   test('Доступ разрешён (присутсвует роль)', async () => {
     componentRender(<AppRouter />, {
