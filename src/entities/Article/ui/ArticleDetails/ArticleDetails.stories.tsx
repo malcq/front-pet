@@ -9,6 +9,9 @@ import { Article } from '../../model/types/article';
 const meta: Meta<typeof ArticleDetails> = {
   title: 'entities/Article/ArticleDetails',
   component: ArticleDetails,
+  parameters: {
+    loki: { skip: true },
+  },
 };
 
 export default meta;
