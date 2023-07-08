@@ -12,5 +12,10 @@ type Story = StoryObj<typeof NotificationItem>;
 
 export const Primary: Story = {};
 Primary.args = {
-
+  item: {
+    id: 'test',
+    title: 'test title primary',
+    description: 'description primary',
+    href: '#',
+  },
 };
