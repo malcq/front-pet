@@ -7,7 +7,9 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { VStack } from '@/shared/ui/Stack';
 import { Text, TextSize } from '@/shared/ui/Text';
 
-import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
+import {
+  useArticleRecommendationsList,
+} from '../../api/aritcleRecommendationsApi';
 
 interface ArticleRecommendationsListProps {
     className?: string;
@@ -17,6 +19,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
   const { className } = props;
   const { t } = useTranslation();
   const { isLoading, data: articles, error } = useArticleRecommendationsList(3);
+
   if (isLoading || error || !articles) {
     return null;
   }
@@ -25,7 +28,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
     <VStack gap="8" className={classNames('', {}, [className])}>
       <Text
         size={TextSize.L}
-        title={t('article-details:recommendations')}
+        title={t('Рекомендуем')}
       />
       <ArticleList
         articles={articles}

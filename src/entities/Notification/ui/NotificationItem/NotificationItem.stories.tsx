@@ -1,21 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { NotificationItem } from './NotificationItem';
 
-const meta: Meta<typeof NotificationItem> = {
+export default {
   title: 'entities/Notification/NotificationItem',
   component: NotificationItem,
-};
-
-export default meta;
-type Story = StoryObj<typeof NotificationItem>;
-
-export const Primary: Story = {};
-Primary.args = {
-  item: {
-    id: 'test',
-    title: 'test title primary',
-    description: 'description primary',
-    href: '#',
+  argTypes: {
+    backgroundColor: { control: 'color' },
   },
-};
+} as ComponentMeta<typeof NotificationItem>;
+
+const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />;
+
+export const Normal = Template.bind({});
+Normal.args = {};

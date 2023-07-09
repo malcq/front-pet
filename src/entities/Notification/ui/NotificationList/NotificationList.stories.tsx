@@ -1,24 +1,25 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 import { NotificationList } from './NotificationList';
 
-const meta: Meta<typeof NotificationList> = {
+export default {
   title: 'entities/Notification/NotificationList',
   component: NotificationList,
-  decorators: [StoreDecorator({})],
-};
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof NotificationList>;
 
-export default meta;
-type Story = StoryObj<typeof NotificationList>;
+const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args} />;
 
-export const Primary: Story = {};
-Primary.args = {
-
-};
-
-Primary.parameters = {
+export const Normal = Template.bind({});
+Normal.args = {};
+Normal.decorators = [StoreDecorator({})];
+Normal.parameters = {
   mockData: [
     {
       url: `${__API__}/notifications`,
@@ -28,17 +29,17 @@ Primary.parameters = {
         {
           id: '1',
           title: 'Уведомление',
-          description: 'Поставь лайк и оставь комментарий под Ulbi tv',
+          description: 'Поставь лайк и оставь комментарий под Ulbi TV',
         },
         {
           id: '2',
           title: 'Уведомление 2',
-          description: 'Поставь лайк и оставь комментарий под Ulbi tv',
+          description: 'Поставь лайк и оставь комментарий под Ulbi TV',
         },
         {
           id: '3',
           title: 'Уведомление 3',
-          description: 'Поставь лайк и оставь комментарий под Ulbi tv',
+          description: 'Поставь лайк и оставь комментарий под Ulbi TV',
         },
       ],
     },

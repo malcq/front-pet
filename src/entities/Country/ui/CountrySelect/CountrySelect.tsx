@@ -4,13 +4,13 @@ import { useTranslation } from 'react-i18next';
 
 import { ListBox } from '@/shared/ui/Popups';
 
-import { Country } from '../../model/types/Country';
+import { Country } from '../../model/types/country';
 
 interface CountrySelectProps {
-	className?: string;
-	value?: Country;
-	onChange?: (value: Country) => void;
-	readonly?: boolean;
+    className?: string;
+    value?: Country;
+    onChange?: (value: Country) => void;
+    readonly?: boolean;
 }
 
 const options = [
@@ -19,7 +19,6 @@ const options = [
   { value: Country.Belarus, content: Country.Belarus },
   { value: Country.Kazakhstan, content: Country.Kazakhstan },
   { value: Country.Ukraine, content: Country.Ukraine },
-
 ];
 
 export const CountrySelect = memo(({
@@ -33,11 +32,10 @@ export const CountrySelect = memo(({
 
   return (
     <ListBox
-      className={className}
       onChange={onChangeHandler}
       value={value}
-      defaultValue={t('profile:city')}
-      label={t('profile:city')}
+      defaultValue={t('Укажите страну')}
+      label={t('Укажите страну')}
       items={options}
       readonly={readonly}
       direction="top right"

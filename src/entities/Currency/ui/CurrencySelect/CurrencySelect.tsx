@@ -7,16 +7,16 @@ import { ListBox } from '@/shared/ui/Popups';
 import { Currency } from '../../model/types/currency';
 
 interface CurrencySelectProps {
-	className?: string;
-	value?: Currency;
-	onChange?: (value: Currency) => void;
-	readonly?: boolean;
+    className?: string;
+    value?: Currency;
+    onChange?: (value: Currency) => void;
+    readonly?: boolean;
 }
 
 const options = [
   { value: Currency.RUB, content: Currency.RUB },
-  { value: Currency.USD, content: Currency.USD },
   { value: Currency.EUR, content: Currency.EUR },
+  { value: Currency.USD, content: Currency.USD },
 ];
 
 export const CurrencySelect = memo(({
@@ -32,8 +32,8 @@ export const CurrencySelect = memo(({
     <ListBox
       className={className}
       value={value}
-      defaultValue={t('profile:currency')}
-      label={t('profile:currency')}
+      defaultValue={t('Укажите валюту')}
+      label={t('Укажите валюту')}
       items={options}
       onChange={onChangeHandler}
       readonly={readonly}

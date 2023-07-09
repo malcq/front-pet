@@ -1,4 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
@@ -8,43 +10,44 @@ import { Theme } from '@/shared/const/theme';
 
 import ProfilePage from './ProfilePage';
 
-const meta: Meta<typeof ProfilePage> = {
+export default {
   title: 'pages/ProfilePage',
   component: ProfilePage,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof ProfilePage>;
 
-};
+const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
 
-export default meta;
-type Story = StoryObj<typeof ProfilePage>;
-
-export const Light: Story = {};
-
-Light.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
+export const Normal = Template.bind({});
+Normal.args = {};
+Normal.decorators = [StoreDecorator({
   profile: {
     form: {
-      username: 'username',
+      username: 'admin',
       age: 22,
-      country: Country.Belarus,
-      lastname: 'lastname',
-      first: 'firstname',
-      city: 'city',
-      currency: Currency.EUR,
+      country: Country.Ukraine,
+      lastname: 'ulbi tv',
+      first: 'asd',
+      city: 'asf',
+      currency: Currency.USD,
     },
   },
 })];
 
-export const Dark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
-    profile: {
-      form: {
-        username: 'username',
-        age: 22,
-        country: Country.Belarus,
-        lastname: 'lastname',
-        first: 'firstname',
-        city: 'city',
-        currency: Currency.EUR,
-      },
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+  profile: {
+    form: {
+      username: 'admin',
+      age: 22,
+      country: Country.Ukraine,
+      lastname: 'ulbi tv',
+      first: 'asd',
+      city: 'asf',
+      currency: Currency.USD,
     },
-  })],
-};
+  },
+})];

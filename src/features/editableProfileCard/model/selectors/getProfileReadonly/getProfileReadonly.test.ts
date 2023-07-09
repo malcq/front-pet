@@ -1,24 +1,18 @@
-import { waitFor } from '@testing-library/react';
-
 import { StateSchema } from '@/app/providers/StoreProvider';
 
 import { getProfileReadonly } from './getProfileReadonly';
 
 describe('getProfileReadonly.test', () => {
   test('should work with filled state', () => {
-    waitFor(() => {
-      const state: DeepPartial<StateSchema> = {
-        profile: {
-          readonly: true,
-        },
-      };
-      expect(getProfileReadonly(state as StateSchema)).toEqual(true);
-    });
+    const state: DeepPartial<StateSchema> = {
+      profile: {
+        readonly: true,
+      },
+    };
+    expect(getProfileReadonly(state as StateSchema)).toEqual(true);
   });
   test('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {};
-    waitFor(() => {
-      expect(getProfileReadonly(state as StateSchema)).toEqual(undefined);
-    });
+    expect(getProfileReadonly(state as StateSchema)).toEqual(undefined);
   });
 });

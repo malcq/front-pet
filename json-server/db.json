@@ -705,7 +705,7 @@
       "roles": [
         "ADMIN"
       ],
-      "avatar": "https://cdn.metatime.com/landing/blog/1686575019blobi1d0.jpg"
+      "avatar": "https://yakutsk.ru/wp-content/uploads/2022/07/12/bystrov_haker.jpeg"
     },
     {
       "id": "2",
@@ -736,7 +736,7 @@
       "country": "Belarus",
       "city": "Moscow",
       "username": "admin213",
-      "avatar": "https://cdn.metatime.com/landing/blog/1686575019blobid0.jpg"
+      "avatar": "https://yt3.ggpht.com/ytc/AKedOLTYUJxG8Hu036PQ_TXpMLq2fG8Kj8NZI4h0lbn_3g=s900-c-k-c0x00ffffff-no-rj"
     },
     {
       "id": "2",
@@ -770,50 +770,28 @@
       "articleId": "3",
       "rate": 3,
       "feedback": "",
-      "id": "KCUFkvY"
-    },
-    {
-      "userId": "1",
-      "articleId": "4",
-      "rate": 5,
-      "feedback": "классный отзыв",
-      "id": "q-lX5Gf"
-    },
-    {
-      "userId": "1",
-      "articleId": "5",
-      "rate": 5,
-      "id": "U3ui14i"
-    },
-    {
-      "userId": "1",
-      "articleId": "6",
-      "rate": 5,
-      "id": "6avrZlZ"
-    },
-    {
-      "userId": "1",
-      "articleId": "7",
-      "rate": 2,
-      "id": "lBpGDdw"
-    },
-    {
-      "userId": "1",
-      "articleId": "8",
-      "rate": 1,
-      "id": "M--lCbz"
+      "id": "I7ofk1u"
     },
     {
       "userId": "1",
       "articleId": "9",
-      "rate": 4,
-      "id": "PzwgJJk"
+      "rate": 5,
+      "feedback": "asdasdasdasd",
+      "id": "Y7MhPzo"
     },
     {
       "userId": "1",
-      "articleId": "11",
+      "articleId": "10",
+      "rate": 1,
+      "feedback": "отстой",
+      "id": "II0a75O"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
       "rate": 3,
-      "id": "0F9tel2"
+      "feedback": "",
+      "id": "bcPnbbZ"
     }
   ],
   "profile-ratings": [

@@ -1,40 +1,37 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Article } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
-const meta: Meta<typeof ArticleRecommendationsList> = {
+export default {
   title: 'features/ArticleRecommendationsList',
   component: ArticleRecommendationsList,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as Meta;
+} as ComponentMeta<typeof ArticleRecommendationsList>;
 
-export default meta;
-type Story = StoryObj<typeof ArticleRecommendationsList>;
-
-export const Normal: Story = {
-  decorators: [StoreDecorator({})],
-};
+const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => <ArticleRecommendationsList {...args} />;
 
 const article: Article = {
-  id: 'id',
+  id: '1',
   img: '',
   createdAt: '',
   views: 123,
-  user: {
-    id: '1',
-    username: '123',
-  },
+  user: { id: '1', username: '123' },
   blocks: [],
   type: [],
   title: '123',
-  subtitle: 'asdasdsa',
+  subtitle: 'asfsa',
 };
 
+export const Normal = Template.bind({});
+Normal.args = {};
+Normal.decorators = [StoreDecorator({})];
 Normal.parameters = {
   mockData: [
     {
@@ -45,7 +42,6 @@ Normal.parameters = {
         { ...article, id: '1' },
         { ...article, id: '2' },
         { ...article, id: '3' },
-
       ],
     },
   ],

@@ -1,21 +1,19 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import CalendarIcon from '@/shared/assets/icons/calendar.svg';
-import EyeIcon from '@/shared/assets/icons/eye.svg';
+import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Icon } from '@/shared/ui/Icon';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
 
-import cls from './ArticleDetails.module.scss';
 import { ArticleBlockType } from '../../model/consts/articleConsts';
 import {
   getArticleDetailsData,
@@ -23,27 +21,29 @@ import {
   getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
-import { articleDetailsReducer } from '../../model/slices/articleDetailsSlice';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
-	id?: string;
-	className?: string;
+    className?: string;
+    id?: string;
 }
 
 const reducers: ReducersList = {
   articleDetails: articleDetailsReducer,
 };
 
-export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
-  const { t } = useTranslation('article-details');
+export const ArticleDetails = memo((props: ArticleDetailsProps) => {
+  const { className, id } = props;
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const isLoading = useSelector(getArticleDetailsIsLoading);
-  const error = useSelector(getArticleDetailsError);
   const article = useSelector(getArticleDetailsData);
+  const error = useSelector(getArticleDetailsError);
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
@@ -51,16 +51,16 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
       return (
         <ArticleCodeBlockComponent
           key={block.id}
-          className={cls.block}
           block={block}
+          className={cls.block}
         />
       );
     case ArticleBlockType.IMAGE:
       return (
         <ArticleImageBlockComponent
           key={block.id}
-          className={cls.block}
           block={block}
+          className={cls.block}
         />
       );
     case ArticleBlockType.TEXT:
@@ -76,9 +76,11 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     }
   }, []);
 
-  useInitialEffect(() => {
-    dispatch(fetchArticleById(id));
-  });
+  useEffect(() => {
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchArticleById(id));
+    }
+  }, [dispatch, id]);
 
   let content;
 
@@ -96,7 +98,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     content = (
       <Text
         align={TextAlign.CENTER}
-        title={t('errorArticle')}
+        title={t('Произошла ошибка при загрузке статьи.')}
       />
     );
   } else {
@@ -127,7 +129,6 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
         </VStack>
         {article?.blocks.map(renderBlock)}
       </>
-
     );
   }
 
@@ -137,6 +138,5 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
         {content}
       </VStack>
     </DynamicModuleLoader>
-
   );
 });

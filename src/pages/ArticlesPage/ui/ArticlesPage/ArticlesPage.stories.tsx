@@ -1,49 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import ArticlesPage from './ArticlesPage';
 
-const meta: Meta<typeof ArticlesPage> = {
-  title: 'pages/Article/ArticlesPage',
+export default {
+  title: 'pages/ArticlesPage/ArticlesPage',
   component: ArticlesPage,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [StoreDecorator({})],
-  parameters: {
-    loki: { skip: true },
-  },
-} as Meta;
+} as ComponentMeta<typeof ArticlesPage>;
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+const Template: ComponentStory<typeof ArticlesPage> = (args) => <ArticlesPage {...args} />;
 
-export const Primary: Story = {};
-Primary.args = {};
-Primary.parameters = {
-  mockData: [
-    {
-      url: `${__API__}/articles`,
-      method: 'GET',
-      status: 200,
-      response: [
-        {
-          id: '1',
-          title: 'Уведомление',
-          description: 'Поставь лайк и оставь комментарий под Ulbi tv',
-        },
-        {
-          id: '2',
-          title: 'Уведомление 2',
-          description: 'Поставь лайк и оставь комментарий под Ulbi tv',
-        },
-        {
-          id: '3',
-          title: 'Уведомление 3',
-          description: 'Поставь лайк и оставь комментарий под Ulbi tv',
-        },
-      ],
-    },
-  ],
-};
+export const Normal = Template.bind({});
+Normal.args = {};

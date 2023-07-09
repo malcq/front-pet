@@ -6,18 +6,19 @@ import { componentRender } from '@/shared/lib/tests/componentRender/componentRen
 
 import AppRouter from './AppRouter';
 
-describe('app/router/AppRouter.test', () => {
+describe('app/router/AppRouter', () => {
   test('Страница должна отрендериться', async () => {
     componentRender(<AppRouter />, {
       route: getRouteAbout(),
     });
+
     const page = await screen.findByTestId('AboutPage');
     expect(page).toBeInTheDocument();
   });
 
   test('Страница не найдена', async () => {
     componentRender(<AppRouter />, {
-      route: '/asdasd',
+      route: '/asfasfasfasf',
     });
 
     const page = await screen.findByTestId('NotFoundPage');
@@ -37,9 +38,7 @@ describe('app/router/AppRouter.test', () => {
     componentRender(<AppRouter />, {
       route: getRouteProfile('1'),
       initialState: {
-        user: {
-          _inited: true, authData: {},
-        },
+        user: { _inited: true, authData: {} },
       },
     });
 
@@ -47,32 +46,23 @@ describe('app/router/AppRouter.test', () => {
     expect(page).toBeInTheDocument();
   });
 
-  /*  test('Доступ запрещён (отсутствует роль)', async () => {
-    waitFor(() => {
-      componentRender(<AppRouter />, {
-        route: getRouteAdmin(),
-        initialState: {
-          user: {
-            _inited: true, authData: {},
-          },
-        },
-      });
+  test('Доступ запрещен (отсутствует роль)', async () => {
+    componentRender(<AppRouter />, {
+      route: getRouteAdmin(),
+      initialState: {
+        user: { _inited: true, authData: {} },
+      },
     });
 
     const page = await screen.findByTestId('ForbiddenPage');
     expect(page).toBeInTheDocument();
-  }); */
+  });
 
-  test('Доступ разрешён (присутсвует роль)', async () => {
+  test('Доступ разрешен (присутствует роль)', async () => {
     componentRender(<AppRouter />, {
       route: getRouteAdmin(),
       initialState: {
-        user: {
-          _inited: true,
-          authData: {
-            roles: [UserRole.ADMIN],
-          },
-        },
+        user: { _inited: true, authData: { roles: [UserRole.ADMIN] } },
       },
     });
 
