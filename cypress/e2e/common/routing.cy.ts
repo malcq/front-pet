@@ -1,7 +1,7 @@
-import { selectByTestId } from 'cypress/helpers/selectByTestId';
+import { selectByTestId } from '../../helpers/selectByTestId';
 
 describe('Роутинг', () => {
-  describe('Пользователь не авторизован', () => {
+  describe('Пользователь НЕ авторизован', () => {
     it('Переход на главную страницу', () => {
       cy.visit('/');
       cy.get(selectByTestId('MainPage')).should('exist');
@@ -10,14 +10,14 @@ describe('Роутинг', () => {
       cy.visit('/profile/1');
       cy.get(selectByTestId('MainPage')).should('exist');
     });
-    it('Переход открывает несуществующий маршрут', () => {
-      cy.visit('/asdasd');
+    it('Переход открывает несуществующий маршрут ', () => {
+      cy.visit('/fasfasfasf');
       cy.get(selectByTestId('NotFoundPage')).should('exist');
     });
   });
   describe('Пользователь авторизован', () => {
     beforeEach(() => {
-      cy.login('admin', '123');
+      cy.login();
     });
     it('Переход открывает страницу профиля', () => {
       cy.visit('/profile/1');
