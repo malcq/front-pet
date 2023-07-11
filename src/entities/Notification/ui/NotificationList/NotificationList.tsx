@@ -9,7 +9,7 @@ import { NotificationItem } from '../NotificationItem/NotificationItem';
 import cls from './NotificationList.module.scss';
 
 interface NotificationListProps {
-    className?: string;
+  className?: string;
 }
 
 export const NotificationList = memo((props: NotificationListProps) => {
@@ -38,9 +38,7 @@ export const NotificationList = memo((props: NotificationListProps) => {
       max
       className={classNames(cls.NotificationList, {}, [className])}
     >
-      {data?.map((item) => (
-        <NotificationItem key={item.id} item={item} />
-      ))}
+      {data?.map((item) => <NotificationItem key={item.id} item={item} />)}
     </VStack>
   );
 });

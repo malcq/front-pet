@@ -1,6 +1,6 @@
 let currentArticleId = '';
 describe('Пользователь заходит на страницу статьи', () => {
-  describe(('работа с API'), () => {
+  describe('работа с API', () => {
     beforeEach(() => {
       cy.login();
       cy.createArticle().then((article) => {
