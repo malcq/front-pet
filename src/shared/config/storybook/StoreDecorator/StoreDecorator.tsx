@@ -1,8 +1,8 @@
-import { DecoratorFn } from '@storybook/react';
+import { Story } from '@storybook/react';
 
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { articleDetailsReducer } from '@/entities/Article/testing';
-import { addCommentFormReducer } from '@/features/AddCommentForm/testing';
+import { addCommentFormReducer } from '@/features/addCommentForm/testing';
 import { loginReducer } from '@/features/AuthByUsername/testing';
 import { profileReducer } from '@/features/editableProfileCard/testing';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
@@ -19,9 +19,8 @@ const defaultAsyncReducers: ReducersList = {
 export const StoreDecorator = (
   state: DeepPartial<StateSchema>,
   asyncReducers?: ReducersList,
-): DecoratorFn => (StoryComponent) => (
+) => (StoryComponent: Story) => (
   <StoreProvider initialState={state} asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}>
     <StoryComponent />
   </StoreProvider>
-
 );

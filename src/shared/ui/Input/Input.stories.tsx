@@ -1,21 +1,21 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Input } from './Input';
 
-const meta: Meta<typeof Input> = {
+export default {
   title: 'shared/Input',
   component: Input,
-  tags: ['autodocs'],
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as Meta;
+} as ComponentMeta<typeof Input>;
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
-export const Primary: Story = {};
+export const Primary = Template.bind({});
 Primary.args = {
   placeholder: 'Type text',
-  value: '1123213123',
+  value: '123123',
 };

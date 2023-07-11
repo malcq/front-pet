@@ -5,15 +5,16 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextAlign } from '@/shared/ui/Text';
 
-import cls from './ArticleImageBlockComponent.module.scss';
 import { ArticleImageBlock } from '../../model/types/article';
+import cls from './ArticleImageBlockComponent.module.scss';
 
 interface ArticleImageBlockComponentProps {
-	className?: string;
-	block: ArticleImageBlock;
+    className?: string;
+    block: ArticleImageBlock;
 }
 
-export const ArticleImageBlockComponent = memo(({ className, block }: ArticleImageBlockComponentProps) => {
+export const ArticleImageBlockComponent = memo((props: ArticleImageBlockComponentProps) => {
+  const { className, block } = props;
   const { t } = useTranslation();
 
   return (

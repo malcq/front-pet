@@ -4,9 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import {
-  ArticleSortField,
-  ArticleType,
-  ArticleView,
+  ArticleSortField, ArticleType, ArticleView,
 } from '@/entities/Article';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
@@ -18,23 +16,22 @@ import { SortOrder } from '@/shared/types/sort';
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
 
-import cls from './ArticlesPageFilters.module.scss';
 import {
-  getArticlesPageOrder,
-  getArticlesPageSearch,
-  getArticlesPageSort,
-  getArticlesPageType,
+  getArticlesPageOrder, getArticlesPageSearch,
+  getArticlesPageSort, getArticlesPageType,
   getArticlesPageView,
-} from '../../model/selectors/articlesPageSelector';
+} from '../../model/selectors/articlesPageSelectors';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
+import cls from './ArticlesPageFilters.module.scss';
 
-interface ArticlesPageFilterProps {
-	className?: string;
+interface ArticlesPageFiltersProps {
+    className?: string;
 }
 
-export const ArticlesPageFilters = memo(({ className }: ArticlesPageFilterProps) => {
-  const { t } = useTranslation('articles');
+export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
+  const { className } = props;
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const view = useSelector(getArticlesPageView);
   const sort = useSelector(getArticlesPageSort);
@@ -81,9 +78,9 @@ export const ArticlesPageFilters = memo(({ className }: ArticlesPageFilterProps)
       <div className={cls.sortWrapper}>
         <ArticleSortSelector
           order={order}
-          onChangeSort={onChangeSort}
-          onChangeOrder={onChangeOrder}
           sort={sort}
+          onChangeOrder={onChangeOrder}
+          onChangeSort={onChangeSort}
         />
         <ArticleViewSelector
           view={view}
@@ -94,7 +91,7 @@ export const ArticlesPageFilters = memo(({ className }: ArticlesPageFilterProps)
         <Input
           onChange={onChangeSearch}
           value={search}
-          placeholder={t('search')}
+          placeholder={t('Поиск')}
         />
       </Card>
       <ArticleTypeTabs

@@ -10,18 +10,19 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi';
 
 export interface ArticleRatingProps {
-	className?: string;
-	articleId: string;
+    className?: string;
+    articleId: string;
 }
 
-const ArticleRating = memo(({ className, articleId }: ArticleRatingProps) => {
-  const { t } = useTranslation('article-details');
+const ArticleRating = memo((props: ArticleRatingProps) => {
+  const { className, articleId } = props;
+  const { t } = useTranslation();
   const userData = useSelector(getUserAuthData);
-  const { data, isLoading } = useGetArticleRating({
-    userId: userData?.id ?? '',
-    articleId,
-  });
 
+  const { data, isLoading } = useGetArticleRating({
+    articleId,
+    userId: userData?.id ?? '',
+  });
   const [rateArticleMutation] = useRateArticle();
 
   const handleRateArticle = useCallback((starsCount: number, feedback?: string) => {
@@ -58,8 +59,8 @@ const ArticleRating = memo(({ className, articleId }: ArticleRatingProps) => {
       onAccept={onAccept}
       rate={rating?.rate}
       className={className}
-      title={t('article-details:titleRating')}
-      feedbackTitle={t('feedbackTitleRating')}
+      title={t('Оцените статью')}
+      feedbackTitle={t('Оставьте свой отзыв о статье, это поможет улучшить качество')}
       hasFeedback
     />
   );

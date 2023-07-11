@@ -4,20 +4,21 @@ import { buildSlice } from '@/shared/lib/store';
 
 import { CounterSchema } from '../types/counterSchema';
 
-const intialState: CounterSchema = {
+const initialState: CounterSchema = {
   value: 0,
 };
-const counterSlice = buildSlice({
+
+export const counterSlice = buildSlice({
   name: 'counter',
-  initialState: intialState,
+  initialState,
   reducers: {
-    incremented: (state) => {
+    increment: (state) => {
       state.value += 1;
     },
     add: (state, { payload }: PayloadAction<number>) => {
       state.value += payload;
     },
-    decremented: (state) => {
+    decrement: (state) => {
       state.value -= 1;
     },
   },

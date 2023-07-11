@@ -1,24 +1,18 @@
-import { waitFor } from '@testing-library/react';
-
 import { StateSchema } from '@/app/providers/StoreProvider';
 
 import { getLoginUsername } from './getLoginUsername';
 
-describe('getLoginError.test', () => {
+describe('getLoginUsername.test', () => {
   test('should return value', () => {
-    waitFor(() => {
-      const state: DeepPartial<StateSchema> = {
-        loginForm: {
-          username: 'adsdf2',
-        },
-      };
-      expect(getLoginUsername(state as StateSchema)).toEqual('adsdf2');
-    });
+    const state: DeepPartial<StateSchema> = {
+      loginForm: {
+        username: '123123',
+      },
+    };
+    expect(getLoginUsername(state as StateSchema)).toEqual('123123');
   });
   test('should work with empty state', () => {
-    waitFor(() => {
-      const state: DeepPartial<StateSchema> = {};
-      expect(getLoginUsername(state as StateSchema)).toEqual('');
-    });
+    const state: DeepPartial<StateSchema> = {};
+    expect(getLoginUsername(state as StateSchema)).toEqual('');
   });
 });

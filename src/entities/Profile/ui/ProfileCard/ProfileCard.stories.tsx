@@ -1,48 +1,43 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import AvatarImg from '@/shared/assets/tests/avatar.jpg';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import avatar from '@/shared/assets/tests/storybook.jpg';
 
 import { ProfileCard } from './ProfileCard';
 
-const meta: Meta<typeof ProfileCard> = {
+export default {
   title: 'entities/ProfileCard',
   component: ProfileCard,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof ProfileCard>;
 
-};
+const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />;
 
-export default meta;
-type Story = StoryObj<typeof ProfileCard>;
-
-export const Primary: Story = {
-  decorators: [ThemeDecorator(Theme.LIGHT), StoreDecorator({})],
-};
-
+export const Primary = Template.bind({});
 Primary.args = {
   data: {
-    username: 'username',
+    username: 'admin',
     age: 22,
-    country: Country.Belarus,
-    lastname: 'lastname',
-    first: 'firstname',
-    city: 'city',
-    currency: Currency.EUR,
-    avatar: AvatarImg,
+    country: Country.Ukraine,
+    lastname: 'ulbi tv',
+    first: 'asd',
+    city: 'asf',
+    currency: Currency.USD,
+    avatar,
   },
 };
 
-export const IsLoading: Story = {};
-
-IsLoading.args = {
-  isLoading: true,
+export const withError = Template.bind({});
+withError.args = {
+  error: 'true',
 };
 
-export const WithError: Story = {};
-
-WithError.args = {
-  error: 'true',
+export const Loading = Template.bind({});
+Loading.args = {
+  isLoading: true,
 };

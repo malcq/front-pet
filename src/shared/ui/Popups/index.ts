@@ -1,3 +1,3 @@
-export { ListBox } from './ui/ListBox/ListBox';
-export { DropDownMenu } from './ui/DropDownMenu/DropDownMenu';
-export { Popover } from './ui/Popover/Popover';
+export { Dropdown } from './components/Dropdown/Dropdown';
+export { ListBox } from './components/ListBox/ListBox';
+export { Popover } from './components/Popover/Popover';

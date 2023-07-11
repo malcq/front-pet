@@ -15,8 +15,8 @@ import {
   getRouteArticleCreate,
   getRouteArticleDetails,
   getRouteArticleEdit,
-  getRouteArticles,
   getRouteForbidden,
+  getRouteArticles,
   getRouteMain,
   getRouteProfile,
 } from '@/shared/const/router';
@@ -62,11 +62,11 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     authOnly: true,
     roles: [UserRole.MANAGER, UserRole.ADMIN],
   },
-
   [AppRoutes.FORBIDDEN]: {
     path: getRouteForbidden(),
     element: <ForbiddenPage />,
   },
+  // last
   [AppRoutes.NOT_FOUND]: {
     path: '*',
     element: <NotFoundPage />,

@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { Profile } from '@/entities/Profile';
 
@@ -6,16 +6,16 @@ import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData'
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 import { ProfileSchema } from '../types/editableProfileCardSchema';
 
-const intialState: ProfileSchema = {
+const initialState: ProfileSchema = {
   readonly: true,
   isLoading: false,
   error: undefined,
   data: undefined,
 };
 
-const profileSlice = createSlice({
+export const profileSlice = createSlice({
   name: 'profile',
-  initialState: intialState,
+  initialState,
   reducers: {
     setReadonly: (state, action: PayloadAction<boolean>) => {
       state.readonly = action.payload;
@@ -71,5 +71,6 @@ const profileSlice = createSlice({
   },
 });
 
+// Action creators are generated for each case reducer function
 export const { actions: profileActions } = profileSlice;
 export const { reducer: profileReducer } = profileSlice;

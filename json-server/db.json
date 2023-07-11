@@ -537,6 +537,19 @@
           ]
         }
       ]
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "1RkFeZ4"
     }
   ],
   "comments": [
@@ -705,7 +718,7 @@
       "roles": [
         "ADMIN"
       ],
-      "avatar": "https://cdn.metatime.com/landing/blog/1686575019blobi1d0.jpg"
+      "avatar": "https://yakutsk.ru/wp-content/uploads/2022/07/12/bystrov_haker.jpeg"
     },
     {
       "id": "2",
@@ -724,6 +737,15 @@
         "MANAGER"
       ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "profile": [
@@ -736,7 +758,7 @@
       "country": "Belarus",
       "city": "Moscow",
       "username": "admin213",
-      "avatar": "https://cdn.metatime.com/landing/blog/1686575019blobid0.jpg"
+      "avatar": "https://yt3.ggpht.com/ytc/AKedOLTYUJxG8Hu036PQ_TXpMLq2fG8Kj8NZI4h0lbn_3g=s900-c-k-c0x00ffffff-no-rj"
     },
     {
       "id": "2",
@@ -747,6 +769,28 @@
       "country": "Ukraine",
       "city": "Moscow",
       "username": "ulbi tv",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "3",
+      "first": "manager",
+      "lastname": "serg",
+      "age": 465,
+      "currency": "EUR",
+      "country": "Ukraine",
+      "city": "Moscow",
+      "username": "ulbi tv",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "4",
+      "first": "test",
+      "lastname": "user",
+      "age": 465,
+      "currency": "EUR",
+      "country": "Ukraine",
+      "city": "Moscow",
+      "username": "testuser",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
@@ -770,50 +814,28 @@
       "articleId": "3",
       "rate": 3,
       "feedback": "",
-      "id": "KCUFkvY"
-    },
-    {
-      "userId": "1",
-      "articleId": "4",
-      "rate": 5,
-      "feedback": "классный отзыв",
-      "id": "q-lX5Gf"
-    },
-    {
-      "userId": "1",
-      "articleId": "5",
-      "rate": 5,
-      "id": "U3ui14i"
-    },
-    {
-      "userId": "1",
-      "articleId": "6",
-      "rate": 5,
-      "id": "6avrZlZ"
-    },
-    {
-      "userId": "1",
-      "articleId": "7",
-      "rate": 2,
-      "id": "lBpGDdw"
-    },
-    {
-      "userId": "1",
-      "articleId": "8",
-      "rate": 1,
-      "id": "M--lCbz"
+      "id": "I7ofk1u"
     },
     {
       "userId": "1",
       "articleId": "9",
-      "rate": 4,
-      "id": "PzwgJJk"
+      "rate": 5,
+      "feedback": "asdasdasdasd",
+      "id": "Y7MhPzo"
     },
     {
       "userId": "1",
-      "articleId": "11",
+      "articleId": "10",
+      "rate": 1,
+      "feedback": "отстой",
+      "id": "II0a75O"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
       "rate": 3,
-      "id": "0F9tel2"
+      "feedback": "",
+      "id": "bcPnbbZ"
     }
   ],
   "profile-ratings": [

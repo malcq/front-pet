@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 
@@ -8,31 +7,31 @@ import { useCounterValue } from '../model/selectors/getCounterValue/getCounterVa
 import { useCounterActions } from '../model/slice/counterSlice';
 
 export const Counter = () => {
-  const { t } = useTranslation();
   const dispatch = useDispatch();
   const counterValue = useCounterValue();
-  const { decremented, incremented, add } = useCounterActions();
+  const { t } = useTranslation();
+  const { decrement, increment, add } = useCounterActions();
+
   const handleInc = () => {
-    incremented();
+    increment();
   };
+
   const handleDec = () => {
-    decremented();
+    decrement();
   };
 
   const handleAddFive = () => {
     add(5);
   };
+
   return (
     <div>
-
-      <h1 data-testid="value-title">
-        {counterValue}
-      </h1>
+      <h1 data-testid="value-title">{counterValue}</h1>
       <Button
         onClick={handleAddFive}
-        data-testid="increment-btn"
+        data-testid="increment-btn5"
       >
-        {t('addFive')}
+        {t('add5')}
       </Button>
       <Button
         onClick={handleInc}
@@ -41,11 +40,10 @@ export const Counter = () => {
         {t('increment')}
       </Button>
       <Button
-        onClick={handleDec}
         data-testid="decrement-btn"
+        onClick={handleDec}
       >
         {t('decrement')}
-
       </Button>
     </div>
   );

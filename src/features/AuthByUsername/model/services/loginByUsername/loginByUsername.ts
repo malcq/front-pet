@@ -1,19 +1,18 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-// eslint-disable-next-line
-import { ThunkConfig } from '@/app/providers/StoreProvider/config/StateSchema';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { User, userActions } from '@/entities/User';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 
-interface LoginByUserNameProps {
-	username: string;
-	password: string;
+interface LoginByUsernameProps {
+    username: string;
+    password: string;
 }
 
 export const loginByUsername = createAsyncThunk<
-	User,
-	LoginByUserNameProps,
-	ThunkConfig<string>
+    User,
+    LoginByUsernameProps,
+    ThunkConfig<string>
 >(
   'login/loginByUsername',
   async (authData, thunkApi) => {
@@ -28,7 +27,6 @@ export const loginByUsername = createAsyncThunk<
 
       localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
       dispatch(userActions.setAuthData(response.data));
-
       return response.data;
     } catch (e) {
       console.log(e);
