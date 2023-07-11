@@ -7303,10 +7303,10 @@
     "debug" "^3.2.7"
     "find-up" "^2.1.0"
 
-"eslint-plugin-front-path-plugin@^0.0.12":
-  "integrity" "sha512-dmIgpjqtFwBpXj+ok2F/RMoummBwDpKxL0PB3rQv4TgAvlZDgfqhM3i9KCjfbHjzy/cmjrU1uMOa+OmmpuSQFQ=="
-  "resolved" "https://registry.npmjs.org/eslint-plugin-front-path-plugin/-/eslint-plugin-front-path-plugin-0.0.12.tgz"
-  "version" "0.0.12"
+"eslint-plugin-front-path-plugin@^0.0.13":
+  "integrity" "sha512-XwWpksds+BoU6Q9kT72h6dAIOLO3heRvoUUH2171E/k4yKF03w6ZlZymAIW18L4YkR0Ub/Wp6CQ5+vV10PW5eA=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-front-path-plugin/-/eslint-plugin-front-path-plugin-0.0.13.tgz"
+  "version" "0.0.13"
   dependencies:
     "micromatch" "^4.0.5"
     "requireindex" "^1.2.0"
