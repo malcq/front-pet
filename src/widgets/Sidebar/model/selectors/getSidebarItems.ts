@@ -1,10 +1,10 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { getUserAuthData } from '@/entities/User';
-import AboutIcon from '@/shared/assets/icons/about.svg';
-import ArticleIcon from '@/shared/assets/icons/article.svg';
-import MainIcon from '@/shared/assets/icons/main.svg';
-import ProfileIcon from '@/shared/assets/icons/profile.svg';
+import AboutIcon from '@/shared/assets/icons/about-20-20.svg';
+import ArticleIcon from '@/shared/assets/icons/article-20-20.svg';
+import MainIcon from '@/shared/assets/icons/main-20-20.svg';
+import ProfileIcon from '@/shared/assets/icons/profile-20-20.svg';
 import {
   getRouteAbout,
   getRouteArticles,
@@ -14,39 +14,36 @@ import {
 
 import { SidebarItemType } from '../types/sidebar';
 
-export const getSidebarItems = createSelector(
-  getUserAuthData,
-  (userData) => {
-    const sidebarItemsList: SidebarItemType[] = [
+export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
+  const sidebarItemsList: SidebarItemType[] = [
+    {
+      path: getRouteMain(),
+      Icon: MainIcon,
+      text: 'Главная',
+    },
+    {
+      path: getRouteAbout(),
+      Icon: AboutIcon,
+      text: 'О сайте',
+    },
+  ];
+
+  if (userData) {
+    sidebarItemsList.push(
       {
-        path: getRouteMain(),
-        Icon: MainIcon,
-        text: 'navbar.main',
+        path: getRouteProfile(userData.id),
+        Icon: ProfileIcon,
+        text: 'Профиль',
+        authOnly: true,
       },
       {
-        path: getRouteAbout(),
-        Icon: AboutIcon,
-        text: 'navbar.about',
+        path: getRouteArticles(),
+        Icon: ArticleIcon,
+        text: 'Статьи',
+        authOnly: true,
       },
-    ];
+    );
+  }
 
-    if (userData) {
-      sidebarItemsList.push(
-        {
-          path: getRouteProfile(userData?.id),
-          Icon: ProfileIcon,
-          text: 'navbar.profile',
-          authOnly: true,
-        },
-        {
-          path: getRouteArticles(),
-          Icon: ArticleIcon,
-          text: 'navbar.article',
-          authOnly: true,
-        },
-      );
-    }
-    return sidebarItemsList;
-  },
-
-);
+  return sidebarItemsList;
+});

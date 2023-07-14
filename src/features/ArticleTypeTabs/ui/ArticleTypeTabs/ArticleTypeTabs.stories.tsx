@@ -1,19 +1,20 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
-const meta: Meta<typeof ArticleTypeTabs> = {
+export default {
   title: 'features/ArticleTypeTabs',
   component: ArticleTypeTabs,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as Meta;
+} as ComponentMeta<typeof ArticleTypeTabs>;
 
-export default meta;
-type Story = StoryObj<typeof ArticleTypeTabs>;
-export const Normal: Story = {};
+const Template: ComponentStory<typeof ArticleTypeTabs> = (args) => (
+  <ArticleTypeTabs {...args} />
+);
 
-Normal.args = {
-
-};
+export const Normal = Template.bind({});
+Normal.args = {};

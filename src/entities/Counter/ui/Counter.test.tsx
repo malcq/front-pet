@@ -1,39 +1,31 @@
-import { fireEvent, screen, waitFor } from '@testing-library/react';
+import { userEvent } from '@storybook/testing-library';
+import { screen } from '@testing-library/react';
 
-import {
-  componentRender,
-} from '@/shared/lib/tests/componentRender/componentRender';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 
 import { Counter } from './Counter';
 
 describe('Counter', () => {
-  test('test render', async () => {
-    waitFor(() => {
-      componentRender(<Counter />, {
-        initialState: { counter: { value: 10 } },
-      });
-      expect(screen.queryByTestId('value-title')).toHaveTextContent('10');
+  test('test render', () => {
+    componentRender(<Counter />, {
+      initialState: { counter: { value: 10 } },
     });
+    expect(screen.getByTestId('value-title')).toHaveTextContent('10');
   });
 
-  test('increment', async () => {
-    waitFor(async () => {
-      componentRender(<Counter />, {
-        initialState: { counter: { value: 10 } },
-      });
-      fireEvent.click(screen.getByTestId('increment-btn'));
-      expect(screen.queryByTestId('value-title')).toHaveTextContent('11');
+  test('increment', () => {
+    componentRender(<Counter />, {
+      initialState: { counter: { value: 10 } },
     });
+    userEvent.click(screen.getByTestId('increment-btn'));
+    expect(screen.getByTestId('value-title')).toHaveTextContent('11');
   });
 
-  test('decrement', async () => {
-    waitFor(async () => {
-      componentRender(<Counter />, {
-        initialState: { counter: { value: 10 } },
-      });
-
-      fireEvent.click(screen.getByTestId('decrement-btn'));
-      expect(screen.queryByTestId('value-title')).toHaveTextContent('9');
+  test('decrement', () => {
+    componentRender(<Counter />, {
+      initialState: { counter: { value: 10 } },
     });
+    userEvent.click(screen.getByTestId('decrement-btn'));
+    expect(screen.getByTestId('value-title')).toHaveTextContent('9');
   });
 });

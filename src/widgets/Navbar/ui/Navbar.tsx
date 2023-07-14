@@ -1,26 +1,25 @@
-import { memo, useCallback, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import {
-  getUserAuthData,
-} from '@/entities/User';
+import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
-import { AvatarDropDown } from '@/features/avatarDropdown';
-import { NotificationButton } from '@/features/NotificationButton';
+import { AvatarDropdown } from '@/features/avatarDropdown';
+import { NotificationButton } from '@/features/notificationButton';
 import { getRouteArticleCreate } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
-import { Button, ButtonVariant } from '@/shared/ui/Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
-import { Text, TextVariant } from '@/shared/ui/Text';
+import { Text, TextTheme } from '@/shared/ui/Text';
 
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
   className?: string;
 }
+
 export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
@@ -39,40 +38,35 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       <header className={classNames(cls.Navbar, {}, [className])}>
         <Text
           className={cls.appName}
-          title={t('navbar.nameApp')}
-          textVariant={TextVariant.INVERTED}
+          title={t('Ulbi TV App')}
+          theme={TextTheme.INVERTED}
         />
         <AppLink
-          className={cls.createBtn}
           to={getRouteArticleCreate()}
           theme={AppLinkTheme.SECONDARY}
+          className={cls.createBtn}
         >
-          {t('navbar.createArticle')}
+          {t('Создать статью')}
         </AppLink>
         <HStack gap="16" className={cls.actions}>
-
           <NotificationButton />
-          <AvatarDropDown />
+          <AvatarDropdown />
         </HStack>
-
       </header>
     );
   }
+
   return (
     <header className={classNames(cls.Navbar, {}, [className])}>
       <Button
-        variant={ButtonVariant.CLEAR_INVERTED}
+        theme={ButtonTheme.CLEAR_INVERTED}
         className={cls.links}
         onClick={onShowModal}
       >
-        {t('signIn')}
+        {t('Войти')}
       </Button>
-
       {isAuthModal && (
-        <LoginModal
-          isOpen={isAuthModal}
-          onClose={onCloseModal}
-        />
+        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
       )}
     </header>
   );

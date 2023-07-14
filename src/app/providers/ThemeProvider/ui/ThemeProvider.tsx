@@ -1,22 +1,21 @@
-import {
-  ReactNode, useEffect, useMemo, useState,
-} from 'react';
+import React, { ReactNode, useMemo, useState } from 'react';
 
-import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localStorage';
+import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localstorage';
 import { Theme } from '@/shared/const/theme';
 
-import {
-  ThemeContext,
-} from '../../../../shared/lib/context/ThemeContext';
+import { ThemeContext } from '../../../../shared/lib/context/ThemeContext';
 
-const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
+const defaultTheme =
+  (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
+
 interface ThemeProviderProps {
-	initialTheme?: Theme;
-	children: ReactNode;
+  initialTheme?: Theme;
+  children: ReactNode;
 }
 
 const ThemeProvider = (props: ThemeProviderProps) => {
   const { initialTheme, children } = props;
+
   const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
 
   const defaultProps = useMemo(
@@ -26,9 +25,6 @@ const ThemeProvider = (props: ThemeProviderProps) => {
     }),
     [theme],
   );
-  useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
 
   return (
     <ThemeContext.Provider value={defaultProps}>

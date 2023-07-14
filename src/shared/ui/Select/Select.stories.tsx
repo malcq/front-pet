@@ -1,24 +1,24 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Select } from './Select';
 
-const meta: Meta<typeof Select> = {
+export default {
   title: 'shared/Select',
   component: Select,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as Meta;
+} as ComponentMeta<typeof Select>;
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
 
-export const Primary: Story = {};
-
+export const Primary = Template.bind({});
 Primary.args = {
-  label: 'Select',
+  label: 'Укажите значение',
   options: [
-    { value: '123', content: 'first option' },
-    { value: '345', content: 'second option' },
+    { value: '123', content: 'Первый пункт' },
+    { value: '1234', content: 'Второй пункт' },
   ],
 };

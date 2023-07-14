@@ -1,35 +1,33 @@
-/* eslint-disable i18next/no-literal-string */
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
 import { Modal } from './Modal';
 
-const meta: Meta<typeof Modal> = {
+export default {
   title: 'shared/Modal',
   component: Modal,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as Meta;
+} as ComponentMeta<typeof Modal>;
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {};
+export const Primary = Template.bind({});
 Primary.args = {
   isOpen: true,
-  children: 'asdasdasd asdasdasdasdasdasdasdasdasdasdasdasd asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd',
+  children:
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.\n ',
 };
 
-export const Dark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-};
-
+export const Dark = Template.bind({});
 Dark.args = {
   isOpen: true,
-  children: 'asdasdasd asdasdasdasdasdasdasdasdasdasdasdasd asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd',
+  children:
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.\n ',
 };
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

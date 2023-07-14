@@ -22,7 +22,7 @@
   position: absolute;
   right: -32px;
   bottom: 32px;
-  z-index: var(--collapsebtn-z-index);
+  z-index: 10;
 }
 
 .items {
@@ -39,6 +39,6 @@
   }
 
   .lang {
-    margin: 0;
+    margin-left: 0;
   }
 }

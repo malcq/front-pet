@@ -1,20 +1,26 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
-import { ArticleListItem } from './ArticleListItem';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
 import { ArticleView } from '../../model/consts/articleConsts';
 import { Article } from '../../model/types/article';
+import { ArticleListItem } from './ArticleListItem';
 
-const meta: Meta<typeof ArticleListItem> = {
+export default {
   title: 'entities/Article/ArticleListItem',
   component: ArticleListItem,
-};
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof ArticleListItem>;
 
-export default meta;
-type Story = StoryObj<typeof ArticleListItem>;
+const Template: ComponentStory<typeof ArticleListItem> = (args) => (
+  <ArticleListItem {...args} />
+);
 
 const article = {
   id: '1',
-  title: 'Javascript news',
+  title: 'Javascript news asfasjf asfjkask f',
   subtitle: 'Что нового в JS за 2022 год?',
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
@@ -22,14 +28,10 @@ const article = {
   user: {
     id: '1',
     username: 'Ulbi tv',
-    avatar: 'https://media.wired.com/photos/644318b17b25a434b1f3bbd7/16:9/pass/security_hacker_names.jpg',
+    avatar:
+      'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
   },
-  type: [
-    'IT',
-    'SCIENCE',
-    'POLITICS',
-    'ECONOMICS',
-  ],
+  type: ['IT', 'SCIENCE', 'POLITICS', 'ECONOMICS'],
   blocks: [
     {
       id: '1',
@@ -71,22 +73,8 @@ const article = {
       type: 'TEXT',
       title: 'Заголовок этого блока',
       paragraphs: [
-        `JavaScript — это язык, программы на котором можно выполнять в разных средах.
-				В нашем случае речь идёт о браузерах и о серверной платформе Node.js.
-				Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере,
-				на настольном компьютере, это значит,что вы буквально в считанных секундах
-				от своей первой JavaScript-программы.`,
-        `Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном 
-				использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. 
-				Как правило, код оформляют в виде отдельных файлов с расширением .js,
-				которые подключают к веб-страницам,но программный код можно включать и непосредственно в код страницы. 
-				Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его.
-				Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример,
-				демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе.
-				Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself),
-				но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе
-				(например — в VS Code или в Notepad++) новый файл, который назовём hello.html,
-				и добавим в него следующий код:`,
+        'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
+        'Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:',
       ],
     },
     {
@@ -100,23 +88,19 @@ const article = {
       type: 'TEXT',
       title: 'Заголовок этого блока',
       paragraphs: [
-        `JavaScript — это язык, программы на котором можно выполнять в разных средах. 
-					В нашем случае речь идёт о браузерах и о серверной платформе Node.js.
-					Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, 
-					на настольном компьютере, это значит, 
-					что вы буквально в считанных секундах от своей первой JavaScript-программы.`,
+        'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
       ],
     },
   ],
 } as Article;
 
-export const Big: Story = {};
+export const Big = Template.bind({});
 Big.args = {
   view: ArticleView.BIG,
   article,
 };
 
-export const Small: Story = {};
+export const Small = Template.bind({});
 Small.args = {
   view: ArticleView.SMALL,
   article,

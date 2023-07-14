@@ -1,20 +1,16 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
-import { Button, ButtonVariant } from './Button';
+import { Button, ButtonTheme } from './Button';
 
 describe('Button', () => {
-  test('test render', () => {
-    // eslint-disable-next-line i18next/no-literal-string
-    render(<Button>test</Button>);
-    expect(screen.getByText('test')).toBeInTheDocument();
+  test('Test render', () => {
+    render(<Button>TEST</Button>);
+    expect(screen.getByText('TEST')).toBeInTheDocument();
   });
 
-  test('with variant clear', () => {
-    // eslint-disable-next-line i18next/no-literal-string
-    render(<Button variant={ButtonVariant.CLEAR}>test</Button>);
-    waitFor(() => {
-      expect(screen.getByText('test')).toHaveClass('clear');
-      screen.debug();
-    });
+  test('Test clear theme', () => {
+    render(<Button theme={ButtonTheme.CLEAR}>TEST</Button>);
+    expect(screen.getByText('TEST')).toHaveClass('clear');
+    screen.debug();
   });
 });

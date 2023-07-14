@@ -1,30 +1,18 @@
-import { waitFor } from '@testing-library/react';
-
-import { loginActions, loginReducer } from './loginSlice';
 import { LoginSchema } from '../types/loginSchema';
+import { loginActions, loginReducer } from './loginSlice';
 
 describe('loginSlice.test', () => {
   test('test set username', () => {
-    waitFor(() => {
-      const state: DeepPartial<LoginSchema> = {
-        username: '123',
-      };
-      expect(loginReducer(
-				state as LoginSchema,
-				loginActions.setUsername('1235454'),
-      )).toEqual({ username: '1235454' });
-    });
+    const state: DeepPartial<LoginSchema> = { username: '123' };
+    expect(
+      loginReducer(state as LoginSchema, loginActions.setUsername('123123')),
+    ).toEqual({ username: '123123' });
   });
 
   test('test set password', () => {
-    waitFor(() => {
-      const state: DeepPartial<LoginSchema> = {
-        password: 'pass12345',
-      };
-      expect(loginReducer(
-				state as LoginSchema,
-				loginActions.setPassword('pass45'),
-      )).toEqual({ password: 'pass45' });
-    });
+    const state: DeepPartial<LoginSchema> = { password: '123' };
+    expect(
+      loginReducer(state as LoginSchema, loginActions.setPassword('123123')),
+    ).toEqual({ password: '123123' });
   });
 });
