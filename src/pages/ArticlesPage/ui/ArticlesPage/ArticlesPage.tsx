@@ -12,6 +12,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from '@/widgets/Page';
 
+import { useArticleItemById } from '../../model/selectors/articlesPageSelectors';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
@@ -32,6 +33,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const [searchParams] = useSearchParams();
+  const data = useArticleItemById('2');
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
