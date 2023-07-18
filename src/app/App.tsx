@@ -48,7 +48,6 @@ function App() {
               header={<Navbar />}
               sidebar={<Sidebar />}
               content={<AppRouter />}
-              toolbar={<div>123</div>}
             />
           </Suspense>
         </div>

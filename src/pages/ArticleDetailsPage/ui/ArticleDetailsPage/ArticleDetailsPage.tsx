@@ -12,7 +12,6 @@ import {
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { Card } from '@/shared/ui/deprecated/Card';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Page } from '@/widgets/Page';
 
@@ -47,7 +46,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
           <ToggleFeatures
             feature="isArticleRatingEnabled"
             on={<ArticleRating articleId={id} />}
-            off={<Card>123</Card>}
+            off={<ArticleRating articleId={id} />}
           />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
