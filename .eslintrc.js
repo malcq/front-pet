@@ -77,6 +77,7 @@ module.exports = {
       {
         markupOnly: true,
         ignoreAttribute: [
+          'wrap',
           'size',
           'color',
           'variant',
