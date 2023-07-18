@@ -5,9 +5,11 @@ import { useTranslation } from 'react-i18next';
 import { ArticleSortField, ArticleType } from '@/entities/Article';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import SearchIcon from '@/shared/assets/icons/search.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { SortOrder } from '@/shared/types/sort';
 import { Card } from '@/shared/ui/redesigned/Card';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 import { Input } from '@/shared/ui/redesigned/Input';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 
@@ -37,6 +39,7 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
     onChangeType,
     search,
   } = props;
+
   const { t } = useTranslation();
 
   return (
@@ -49,6 +52,7 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
           onChange={onChangeSearch}
           value={search}
           placeholder={t('Поиск')}
+          addonLeft={<Icon Svg={SearchIcon} />}
         />
 
         <ArticleTypeTabs
