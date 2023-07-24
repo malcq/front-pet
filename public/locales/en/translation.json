@@ -5,8 +5,6 @@
   "Язык": "English",
   "новый перевод": "новый перевод",
   "Страница не найдена": "Page not found",
-  "Добро Пожаловать на страницу статей": "Welcome to articles page",
-  "Здесь вы можете искать и просматривать стать на различные темы": "Here you can search and view articles on various topics",
   "Произошла непредвиденная ошибка": "An unexpected error has occurred",
   "Обновить страницу": "Reload page",
   "throw error": "throw error",
@@ -50,5 +48,8 @@
   "Ulbi TV App": "Ulbi TV App",
   "Создать статью": "Create article",
   "Профиль пользователя": "Профиль пользователя",
-  "Закрыть": "Закрыть"
+  "Закрыть": "Закрыть",
+  "{{count}} просмотров_zero": "{{count}} views",
+  "{{count}} просмотров_one": "{{count}} view",
+  "{{count}} просмотров_other": "{{count}} views"
 }

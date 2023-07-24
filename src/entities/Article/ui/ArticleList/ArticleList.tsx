@@ -3,7 +3,9 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextSize } from '@/shared/ui/Text';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 import { ArticleView } from '../../model/consts/articleConsts';
 import { Article } from '../../model/types/article';
@@ -45,20 +47,44 @@ export const ArticleList = memo((props: ArticleListProps) => {
   }
 
   return (
-    <div
-      data-testid="ArticleList"
-      className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-    >
-      {articles.map((item) => (
-        <ArticleListItem
-          article={item}
-          view={view}
-          target={target}
-          key={item.id}
-          className={cls.card}
-        />
-      ))}
-      {isLoading && getSkeletons(view)}
-    </div>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <HStack
+          wrap="wrap"
+          gap="16"
+          className={classNames(cls.ArticleListRedesigned, {}, [])}
+          data-testid="ArticleList"
+        >
+          {articles.map((item) => (
+            <ArticleListItem
+              article={item}
+              view={view}
+              target={target}
+              key={item.id}
+              className={cls.card}
+            />
+          ))}
+          {isLoading && getSkeletons(view)}
+        </HStack>
+      }
+      off={
+        <div
+          className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+          data-testid="ArticleList"
+        >
+          {articles.map((item) => (
+            <ArticleListItem
+              article={item}
+              view={view}
+              target={target}
+              key={item.id}
+              className={cls.card}
+            />
+          ))}
+          {isLoading && getSkeletons(view)}
+        </div>
+      }
+    />
   );
 });
